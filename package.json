@@ -1,0 +1,24 @@
+{
+  "name": "tbd",
+  "version": "1.0.0",
+  "description": "hotel app to find and post vacant rooms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmathies/TBD.git"
+  },
+  "author": "Heather Mathies, Eric Matson, Misael Rivera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmathies/TBD/issues"
+  },
+  "homepage": "https://github.com/hmathies/TBD#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql2": "^1.5.0",
+    "sequelize": "^4.22.7"
+  }
+}
