@@ -1,6 +1,7 @@
 <h1>eWalk</h1>
 <p>Be a Jedi! When you've overbooked your hotel, find a room faster and more efficiently with eWalk!</p>
-![Screenshot](MP-Ewok.png)
+
+![Screenshot](ewok.jpeg)
 <p>Credit: This is a promotional image and can be found at http://starwars.wikia.com/wiki/File:MP-Ewok.png</p>
 <hr>
 <h1>Technologies Used:</h1>
