@@ -1,9 +1,10 @@
 /*This is a sequelize generated file which figures our which database should
 be used.  It also goes through every other JS file inside our models folder
-and runs them through sequelize.  It gives our models helper methos and
+and runs them through sequelize.  It gives our models helper methods and
 makes sure associations between models are properly set up and then
 exports an object we will use to interface with Sequelize in our
 other files*/
+
 'use strict';
 
 var fs        = require('fs');
