@@ -1,4 +1,4 @@
-/*This is a sequelize generated file which figures our which database should
+/*This is a sequelize generated file which figures out which database should
 be used.  It also goes through every other JS file inside our models folder
 and runs them through sequelize.  It gives our models helper methods and
 makes sure associations between models are properly set up and then
