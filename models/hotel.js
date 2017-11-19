@@ -1,6 +1,10 @@
 // PROPERTY
 // ewalk_id	property_name	url	address	phone	aboutUs	routingNumber	balance	api_id
 
+// Sequelize (capital) references the standard library
+var Sequelize = require("sequelize");
+// sequelize (lowercase) references our connection to the DB.
+var sequelize = require("../config/connection.js");
 
 module.exports = function(sequelize, DataTypes) {
   var Hotel = sequelize.define("Hotel", {
@@ -68,3 +72,9 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Hotel;
 };
+
+// Syncs with DB
+// Hotel.sync();
+
+// Makes the Character Model available for other files (will also create a table)
+// module.exports = Hotel;

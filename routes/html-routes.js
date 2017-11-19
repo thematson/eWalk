@@ -15,6 +15,7 @@ module.exports = function(app) {
   // index.html loads the welcome page and contains login and registration
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/assets/index.html"));
+    
   });
 
   // this route is the page where users can either add a room or explore vacant rooms
