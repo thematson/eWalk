@@ -1,17 +1,18 @@
 // ROOMS
 // room_ID	price	beds	roomType	aboutRoom	quantity	createDate	status	closeDate	ewalk_ID
 
+
 module.exports = function(sequelize, DataTypes) {
   var Room = sequelize.define("Room", {
     room_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
     ewalk_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.TINYINT,
       allowNull: false,
       validate: {
         len: [1]
@@ -37,13 +38,13 @@ module.exports = function(sequelize, DataTypes) {
     status: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      
+
     },
     closeDate: {
       type: DataTypes.DATE,
       allowNull: false,
-      
+
     }
   });
-  return Hotel;
+  return Room;
 };

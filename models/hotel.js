@@ -1,6 +1,7 @@
-// PROPERTY									
-// ewalk_id	property_name	url	address	phone	aboutUs	routingNumber	balance	api_id	
-                                
+// PROPERTY
+// ewalk_id	property_name	url	address	phone	aboutUs	routingNumber	balance	api_id
+
+
 module.exports = function(sequelize, DataTypes) {
   var Hotel = sequelize.define("Hotel", {
     hotel_name: {
@@ -16,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1]
       }
-    },    
+    },
     url: {
       type: DataTypes.TEXT,
       allowNull: false,
