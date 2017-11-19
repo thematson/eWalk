@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS `ewalk`;
+CREATE DATABASE `ewalk`;
