@@ -18,7 +18,7 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 //html routes
-require("./routes/html.js")(app);
+require("./routes/html-routes.js")(app);
 //api routes
 require("./controllers/hotel.js")(app);
 require("./controllers/room.js")(app);
