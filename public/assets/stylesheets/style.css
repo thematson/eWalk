@@ -8,3 +8,154 @@ main {
   flex: 1 0 auto;
 }
 
+#welcomeLogo {
+  font-family: 'Oswald', sans-serif;
+  font-size:160px;
+  color: white;
+  margin:0px;
+}
+
+.brick{
+  background-color:rgba(223,105,110,1);
+}
+
+#welcome {
+  color:white;
+  margin:0px !important;
+  padding: 10px 0px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.headerRow {
+  height:350px;
+  margin:0px!important;
+  padding:70px 0px !important;
+}
+
+.right {
+  padding-left:50px !important;
+}
+
+#login, #register {
+  margin: 70px 0px;
+  padding:10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bolder;
+  font-size:25px;
+  width:220px;
+  height:75px;
+}
+
+blockquote {
+  font-family: 'Montserrat', sans-serif;
+  font-size:20px;
+  margin: 40px 0px !important;
+}
+
+@media only screen and (max-width: 1400px) 
+{
+  .right {
+    padding:80px 0px !important;
+    padding-left:100px !important;
+  }
+
+  #login, #register {
+    margin: 10px 0px;
+  }
+
+  #welcomeLogo {
+    font-size:160px;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) 
+{
+  .right {
+    padding-left:200px !important;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) 
+{
+  .right {
+    padding-left:180px !important;
+  }
+}
+
+
+
+@media only screen and (max-width: 850px) 
+{
+  .right {
+    padding:40px 0px !important;
+    padding-left:100px !important;
+  }
+
+  #login, #register {
+    margin: 10px 0px;
+  }
+
+  #welcomeLogo {
+    font-size:120px;
+  }
+
+  .headerRow {
+    height:280px;
+  }
+
+}
+
+@media only screen and (max-width: 700px) 
+{
+  .right {
+    padding:60px 0px !important;
+    padding-left:120px !important;
+  }
+
+  #login, #register {
+    margin: 10px 0px;
+    padding:5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bolder;
+    font-size:15px;
+    width:120px;
+    height:60px;
+  }
+
+  #welcomeLogo {
+    font-size:120px;
+  }
+
+  .headerRow {
+    height:280px;
+  }
+
+}
+
+@media only screen and (max-width: 600px) 
+{
+  #welcomeLogo {
+    font-size:100px;
+  }
+
+  .right {
+    padding:60px 0px !important;
+  }
+
+  #login, #register {
+    margin-right: 20px;
+  }
+
+  #welcomeLogo {
+    font-size:120px;
+  }
+
+  .headerRow {
+    height:140px;
+    padding:40px 10.5px !important;
+    width:100%
+  }
+
+}
