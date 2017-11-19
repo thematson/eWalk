@@ -18,10 +18,7 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 //html routes
-require("./routes/addRoom.js")(app);
-require("./routes/landing.js")(app);
-require("./routes/register")(app);
-require("./routes/vacantRooms")(app);
+require("./routes/html.js")(app);
 //api routes
 require("./controllers/hotel.js")(app);
 require("./controllers/room.js")(app);
