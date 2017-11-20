@@ -26,6 +26,6 @@ require("./routes/html-routes.js")(app);
 // db.sequelize.sync({force: true }).then(function(){
   //syncing our database.  creates tables using the models described
   app.listen(PORT, function(){
-    console.log("Listening on port %s", PORT);
+    console.log("Listening on eWalk Friendly Port %s", PORT);
   });
 // });
