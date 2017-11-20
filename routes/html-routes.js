@@ -19,8 +19,8 @@ module.exports = function(app) {
   });
 
   // this route is the page where users can either add a room or explore vacant rooms
-  app.get("/<file_name>", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/assets/<file_name>.html"));
+  app.get("/rooms", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/assets/rooms.html"));
   });
 
 

@@ -1,12 +1,12 @@
 // *********************************************************************************
 // CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
 // *********************************************************************************
-
+//
 // Dependencies
 var Sequelize = require("sequelize");
 
 // Creates mySQL connection using Sequelize
-var sequelize = new Sequelize("ewalk", "root", "password", {
+var sequelize = new Sequelize(config.development.database, "root", "password", {
   host: "localhost",
   dialect: "mysql",
   pool: {
