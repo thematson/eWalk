@@ -4,6 +4,7 @@
 //
 // Dependencies
 var Sequelize = require("sequelize");
+var config = require('./config/config.json');
 
 // Creates mySQL connection using Sequelize
 var sequelize = new Sequelize(config.development.database, "root", "password", {

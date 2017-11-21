@@ -1,11 +1,3 @@
-// PROPERTY
-// ewalk_id	property_name	url	address	phone	aboutUs	routingNumber	balance	api_id
-
-// Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-// var sequelize = require("../config/connection.js");
-
 module.exports = function(sequelize, DataTypes) {
   var Hotel = sequelize.define("Hotel", {
     hotel_name: {
@@ -35,7 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     phone: {
       type: DataTypes.SMALLINT,
       allowNull: false,
-      defaultValue: "123456789",
+      
       validate: {
         len: [1]
       }
