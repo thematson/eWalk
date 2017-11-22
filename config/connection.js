@@ -3,6 +3,7 @@
 // *********************************************************************************
 //
 // Dependencies
+//deleted the below connection code because of the jawsDB connection code from heroku
 // var Sequelize = require("sequelize");
 // var config = require('./config/config.json');
 //
