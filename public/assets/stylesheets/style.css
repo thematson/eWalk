@@ -20,6 +20,7 @@ main {
   font-size: 160px;
   color: #283593;
   margin: 0px;
+  cursor: pointer;
 }
 
 #searchLogo {
@@ -27,6 +28,7 @@ main {
   font-size: 160px;
   color: white;
   margin: 0px;
+  cursor: pointer;
 }
 .brick{
   background-color:rgba(223,105,110,1);
