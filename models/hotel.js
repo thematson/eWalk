@@ -1,3 +1,5 @@
+
+
 module.exports = function(sequelize, DataTypes) {
   var Hotel = sequelize.define("Hotel", {
     hotel_name: {
@@ -7,12 +9,17 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    ewalk_id: {
+    property_id: {
       type: DataTypes.TINYINT,
       allowNull: false,
+      unique: true,
       validate: {
         len: [1]
       }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     url: {
       type: DataTypes.TEXT,
@@ -27,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
     phone: {
       type: DataTypes.SMALLINT,
       allowNull: false,
-      
+
       validate: {
         len: [1]
       }
@@ -64,9 +71,3 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Hotel;
 };
-
-// Syncs with DB
-// Hotel.sync();
-
-// Makes the Character Model available for other files (will also create a table)
-// module.exports = Hotel;
