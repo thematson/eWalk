@@ -69,5 +69,11 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
+  Hotel.associate = function(models){
+    Hotel.hasMany(models.Room, {
+      onDelete: "cascade"
+    });
+  };
   return Hotel;
 };
