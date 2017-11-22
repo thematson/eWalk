@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     property_id: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true,
       validate: {
@@ -47,14 +47,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     routingNumber: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1]
       }
     },
     balance: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.DECIMAL,
       allowNull: false,
       defaultValue: 0,
       validate: {
@@ -75,5 +75,8 @@ module.exports = function(sequelize, DataTypes) {
       onDelete: "cascade"
     });
   };
+  Hotel.prototype.validPassword = function(password) {
+  return password == this.password;
+};
   return Hotel;
 };
