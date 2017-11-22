@@ -4,9 +4,9 @@
   "description": "hotel app to find and post vacant rooms",
   "main": "server.js",
   "scripts": {
-     "test": "nodemon server.js",
-     "start": "node server.js"
-   },
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hmathies/eWalk.git"
@@ -22,6 +22,7 @@
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.0",
+    "passport": "^0.4.0",
     "sequelize": "^4.22.7"
   }
 }
