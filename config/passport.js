@@ -9,19 +9,19 @@ passport.use(new LocalStrategy(
 },
 function(email, password, done){
   //When a user logs in
-  db.User.findOne({
+  db.Hotel.findOne({
     where: {
       email: email
     }
-  }).then(function(dbUser){
+  }).then(function(dbHotel){
     //If no user with given email
-    if(!dbUser){
+    if(!dbHotel){
       return done(null, false, {
         message: "Incorrect email."
       });
     }
     //If none of the above, return the user
-    return done(null, dbUser);
+    return done(null, dbHotel);
   });
 }
 ));
