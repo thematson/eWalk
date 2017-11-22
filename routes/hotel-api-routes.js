@@ -1,15 +1,3 @@
-CRUD
-
-CREATE
-
-
-
-READ
-
-
-
-UPDATE
-
 // *********************************************************************************
 // hotel.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
@@ -17,10 +5,17 @@ UPDATE
 // Dependencies
 // =============================================================
 var db = require("../models");
+var passport = require("../config/passport");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
+
+  //log in
+  app.post("/api/hotels/login", passport.authenticate("local"), function(req, res){
+    res.send("Authorized!");
+
+  })
   // Get all vacant hotels
   app.get("/api/hotels", function(req, res) {
     db.Hotel.findAll({}).then(function(dbHotel) {
@@ -31,7 +26,7 @@ module.exports = function(app) {
 
   // Add a hotel
   app.post("/api/hotels", function(req, res) {
-    
+
     console.log(req.body);
     db.Hotel.create({
       hotel_name: req.body.hotel_name,

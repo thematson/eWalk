@@ -5,19 +5,21 @@ var db = require("../models");
 passport.use(new LocalStrategy(
 //Our user will log in using an email addressInput
 {
-  usernameField: "email"
+  usernameField: "property_id"
 },
-function(email, password, done){
+function(id, password, done){
   //When a user logs in
   db.Hotel.findOne({
     where: {
-      email: email
+      property_id: id
     }
   }).then(function(dbHotel){
     //If no user with given email
-    if(!dbHotel){
+    console.log(dbHotel);
+    if(!dbHotel || !dbHotel.validPassword(password)){
+
       return done(null, false, {
-        message: "Incorrect email."
+        message: "Incorrect login."
       });
     }
     //If none of the above, return the user
@@ -26,8 +28,8 @@ function(email, password, done){
 }
 ));
 
-passport.serializeUser(function(user, cb){
-  cb (null, user);
+passport.serializeUser(function(hotel, cb){
+  cb (null, hotel);
 });
 
 passport.deserializeUser(function(obj, cb){
@@ -35,6 +37,3 @@ passport.deserializeUser(function(obj, cb){
 });
 
 module.exports = passport;
-
-
-))
