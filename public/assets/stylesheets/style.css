@@ -41,6 +41,10 @@ main {
   font-family: 'Montserrat', sans-serif;
 }
 
+.pac-container {
+  z-index: 10000;
+}
+
 .headerRow {
   height:350px;
   margin:0px!important;
