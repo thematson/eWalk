@@ -2,7 +2,7 @@
 $(function(){
 
   var loginModal = $("formId#submit-Login");
-  var propertyIdInput = $("input#property_id");
+  var userNameInput = $("input#userName");
   var passwordInput = $("input#password");
 
   //when the form is submitted we validate there's a property id and password entered
@@ -11,7 +11,7 @@ $(function(){
    e.preventDefault();
 
    var hotelLogin = {
-     property_id: propertyIdInput.val().trim(),
+     property_id: userNameInput.val().trim(),
      password: passwordInput.val().trim()
    };
 
@@ -24,8 +24,7 @@ $(function(){
    propertyIdInput.val("");
    passwordInput.val("");
 });
-propertyIdInput.val("");
-passwordInput.val("");
+
 
 //loginHotel function does a post to our "/api/hotels/login" route and if successful, redirects us to the choice page
 function loginHotel(porperty_id, password){
