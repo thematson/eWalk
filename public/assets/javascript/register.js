@@ -9,7 +9,8 @@ $(function(){
   var userNameInput =$("#userName");
   var passwordInput = $("#password");
 
-  registerModal.click(function(e){
+  $("#submit-Register").click(function(e){
+console.log("Register button was clicked!");
     e.preventDefault();
 
        var hotelData = {
@@ -63,11 +64,11 @@ $(function(){
       window.location.replace(data);
     }).catch(handleLoginErr);
   }
-  //not really sure this function is necessary, or if it will work 
+  //not really sure this function is necessary, or if it will work--if deleted be sure to delete from index.html
+  //as well
   function handleLoginErr(err){
     $("#alert.msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
 
-  }
 });
