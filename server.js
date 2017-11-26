@@ -26,7 +26,7 @@ require("./routes/hotel-api-routes.js")(app);
 require("./routes/room-api-routes.js")(app);
 
 //false makes sure it doesn't drop all of the tables
-//change it true only if I've had a change to the table
+//change it true only if there has been a change to the table
 db.sequelize.sync({force: false }).then(function(){
   //syncing our database.  creates tables using the models described
   app.listen(PORT, function(){

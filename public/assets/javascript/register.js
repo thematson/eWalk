@@ -10,7 +10,7 @@ $(function(){
   var passwordInput = $("#password");
 
   $("#submit-Register").click(function(e){
-console.log("Register button was clicked!");
+    console.log("Register button was clicked!");
     e.preventDefault();
 
        var hotelData = {
