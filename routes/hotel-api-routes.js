@@ -24,7 +24,7 @@ module.exports = function(app) {
     });
   });
 
-  // Register a hotel
+  // Register/Add a hotel
   app.post("/api/hotels/register", function(req, res) {
 
     console.log(req.body);
