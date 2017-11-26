@@ -45,9 +45,9 @@ function loginHotel(userName, password){
 //form validation
 $("#formValidate").validate({
         rules: {
-            property_id: {
+            userName: {
                 required: true,
-                minlength: 1
+                minlength: 4
             },
             password: {
                 required: true,
@@ -56,7 +56,7 @@ $("#formValidate").validate({
         //For custom messages
         messages: {
             property_id:{
-                required: "Enter a Property Id"
+                required: "Enter a UserName"
             },
             password: "Your password must be at least 4 characters",
         },
