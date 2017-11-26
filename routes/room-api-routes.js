@@ -27,7 +27,7 @@ app.post("/api/rooms", function(req, res) {
   console.log(req.body);
   db.Room.create({
       room_id: req.body.room_id,
-      ewalk_id: req.body.ewalk_id,
+      property_id: req.body.property_id,
       price: req.body.price,
       roomType: req.body.roomType,
       aboutRoom: req.body.aboutRoom,
