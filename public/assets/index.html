@@ -46,8 +46,8 @@
         <!-- Property ID Form =============================================== -->
               <div class="row">
                 <div class="input-field col s12">
-                  <input placeholder="Property ID" id="property_id" type="text" class="validate">
-                  <label for="property_id">Property ID</label>
+                  <input id="userName" type="text" class="validate">
+                  <label for="userName">User Name</label>
                 </div>
               </div>
         <!-- Property Password Form ========================================= -->
@@ -127,17 +127,21 @@
 								<div class="row">
 									<div class="input-field col s12">
 										<input placeholder="Placeholder" id="userName" type="text" class="validate">
-										<label for="userName">Pick a User Name for Log In</label>
+										<label for="userName">Create a User Name</label>
 									</div>
 								</div>
 							<!-- Property password Form =================================== -->
 									<div class="row">
 										<div class="input-field col s12">
 											<input placeholder="Placeholder" id="password" type="text" class="validate">
-											<label for="password">Pick a password that is between 4 and 10 characters</label>
+											<label for="password">Create a password that is between 4 and 10 characters</label>
 										</div>
 									</div>
 								</div>
+								<div style="display: none" id="alert" class="alert" role="alert">
+				          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				          <span class="sr-only">Error:</span> <span class="msg"></span>
+			         </div>
           <!-- Register Submit ================================================ -->
             <div class="modal-footer">
               <button class="btn waves-effect waves-light red lighten-2" id="submit-Register" type="submit" form="formId" name="action">Submit
@@ -179,6 +183,7 @@
 			<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
       <script type="text/javascript">$(document).ready(function(){$('.modal').modal();});</script>
+			<script src="/public/assets/javascript/register.js"></script>
 			<script src="/public/assets/javascript/login.js"></script>
 			<script src="/public/assets/javascript/main.js"></script>
     </body>
