@@ -16,6 +16,7 @@ module.exports = function(app) {
     res.send("Authorized!");
 
   });
+
   // Get all vacant hotels
   app.get("/api/hotels", function(req, res) {
     db.Hotel.findAll({}).then(function(dbHotel) {
@@ -23,13 +24,14 @@ module.exports = function(app) {
     });
   });
 
-  // Add a hotel
-  app.post("/api/hotels", function(req, res) {
+  // Register a hotel
+  app.post("/api/hotels/register", function(req, res) {
 
     console.log(req.body);
     db.Hotel.create({
       hotel_name: req.body.hotel_name,
       property_id: req.body.property_id,
+      userName: req.body.userName,
       password: req.body.password,
       url: req.body.url,
       address: req.body.address,
@@ -38,6 +40,11 @@ module.exports = function(app) {
       routingNumber: req.body.routingNumber,
       balance: req.body.balance,
       api_id: req.body.api_id
+    }).then(function(){
+      res.redirect(307, "/api/hotels/login");
+    }).catch(function(err){
+      console.log(err);
+      res.json(err);
     });
   });
 
