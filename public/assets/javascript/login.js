@@ -16,20 +16,23 @@ $(function(){
    };
 
    if (!hotelLogin.userName || !hotelLogin.password){
-      return;
+      alert("you must enter a valid username and/or password");
+      res.redirect("*");
+   }else{
+
    }
 
    //If we have a userName and password we run the loginHotel function and clear the Form
    loginHotel(hotelLogin.userName, hotelLogin.password);
-   propertyIdInput.val("");
-   passwordInput.val("");
+     userNameInput.val("");
+     passwordInput.val("");
 });
 
 
 //loginHotel function does a post to our "/api/hotels/login" route and if successful, redirects us to the choice page
-function loginHotel(porperty_id, password){
+function loginHotel(userName, password){
   $.post("/api/hotels/login", {
-    property_id: property_id,
+    userName: userName,
     password: password
   }).then(function(data){
     window.location.replace(data);
