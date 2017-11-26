@@ -15,7 +15,7 @@ module.exports = function(app) {
   app.post("/api/hotels/login", passport.authenticate("local"), function(req, res){
     res.send("Authorized!");
 
-  })
+  });
   // Get all vacant hotels
   app.get("/api/hotels", function(req, res) {
     db.Hotel.findAll({}).then(function(dbHotel) {
@@ -23,14 +23,14 @@ module.exports = function(app) {
     });
   });
 
-
   // Add a hotel
   app.post("/api/hotels", function(req, res) {
 
     console.log(req.body);
     db.Hotel.create({
       hotel_name: req.body.hotel_name,
-      ewalk_id: req.body.ewalk_id,
+      property_id: req.body.property_id,
+      password: req.body.password,
       url: req.body.url,
       address: req.body.address,
       phone: req.body.phone,
