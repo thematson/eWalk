@@ -7,20 +7,20 @@ $(function(){
 
   //when the form is submitted we validate there's a property id and password entered
  $("#submit-Login").click(function(e){
-  console.log("button was clicked");
+   console.log("button was clicked");
    e.preventDefault();
 
    var hotelLogin = {
-     property_id: userNameInput.val().trim(),
+     userName: userNameInput.val().trim(),
      password: passwordInput.val().trim()
    };
 
-   if (!hotelLogin.property_id || !hotelLogin.password){
+   if (!hotelLogin.userName || !hotelLogin.password){
       return;
    }
 
-   //If we have a property_id and password we run the loginHotel function and clear the Form
-   loginHotel(hotelLogin.property_id, hotelLogin.password);
+   //If we have a userName and password we run the loginHotel function and clear the Form
+   loginHotel(hotelLogin.userName, hotelLogin.password);
    propertyIdInput.val("");
    passwordInput.val("");
 });
