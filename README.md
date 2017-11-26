@@ -5,7 +5,7 @@
 <p>Credit: This is a clipart image and can be found at http://weclipart.com/gimg/A425F14D40565938/il_340x270.558688970_2sb2.jpg</p>
 <hr>
 <h1>Technologies Used:</h1>
-Node.js, jQuery, MySQL, Sequelize, Handlebars, Materialize
+Node.js, jQuery, MySQL, Sequelize, Passport.js, Materialize
 
 
 <h6>eWalk Team members: Heather Mathies, Eric Matson, Misael Rivera</h6>
