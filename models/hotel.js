@@ -69,6 +69,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
+  Hotel.associate = function(models){
+    Hotel.hasMany(models.Room, {
+      onDelete: "cascade"
+    });
+  };
   Hotel.prototype.validPassword = function(password) {
   return password == this.password;
 };

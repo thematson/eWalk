@@ -42,5 +42,14 @@ module.exports = function(sequelize, DataTypes) {
 
     }
   });
+
+  Room.associate = function(models){
+    Room.belongsTo(models.Hotel, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+  
   return Room;
 };
