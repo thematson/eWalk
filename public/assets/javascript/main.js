@@ -1,4 +1,4 @@
-// hotels 
+// hotels
 $(document).ready(function() {
   // Getting references to the name inout and author container, as well as the table body
   var $nameInput = $("input#property_name");
@@ -10,10 +10,10 @@ $(document).ready(function() {
 
 
   $(document).on("submit", "#modal2", addHotel);
-  $("#submit-Login").on("click", proceed);
+  // $("#submit-Login").on("click", proceed);
 
  var hotel = [];
- 
+
  function addHotel(event) {
     event.preventDefault();
     console.log("clicked");
@@ -31,10 +31,9 @@ $(document).ready(function() {
 
   function proceed() {
     window.location.replace("/choice");
-    
+
   }
 
 
-  
-});
 
+});
