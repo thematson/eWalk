@@ -7,19 +7,18 @@ $(function(){
 
   //when the form is submitted we validate there's a property id and password entered
  $("#submit-Login").click(function(e){
-   console.log("button was clicked");
+
    e.preventDefault();
 
    var hotelLogin = {
      userName: userNameInput.val().trim(),
      password: passwordInput.val().trim()
    };
-
-   if (!hotelLogin.userName || !hotelLogin.password){
+   console.log(hotelLogin);
+//need to include if userName or password isn't in the database
+   if (!hotelLogin.userName || !hotelLogin.password ){
       alert("you must enter a valid username and/or password");
-      res.redirect("*");
-   }else{
-
+      res.redirect("/");
    }
 
    //If we have a userName and password we run the loginHotel function and clear the Form
