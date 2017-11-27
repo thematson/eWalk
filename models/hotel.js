@@ -11,8 +11,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     property_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      unique: true,
+      allowNull: true,
       validate: {
         len: [1]
       }
@@ -42,7 +41,7 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     },
     phone: {
-      type: DataTypes.SMALLINT,
+      type: DataTypes.STRING,
       allowNull: false,
 
       validate: {
@@ -73,7 +72,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     api_id: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
