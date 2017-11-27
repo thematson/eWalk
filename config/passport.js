@@ -5,16 +5,17 @@ var db = require("../models");
 passport.use(new LocalStrategy(
 //Our user will log in using an email addressInput
 {
-  usernameField: "property_id"
+  usernameField: "userName"
 },
 function(id, password, done){
   //When a user logs in
   db.Hotel.findOne({
     where: {
-      property_id: id
+      userName: id
     }
   }).then(function(dbHotel){
     //If no user with given email
+    console.log("console log in passport");
     console.log(dbHotel);
     if(!dbHotel || !dbHotel.validPassword(password)){
 
