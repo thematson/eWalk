@@ -1,8 +1,9 @@
 $(document).ready(function() {
  
-  // searchContainer holds all of our posts
-  var searchContainer = $(".searchContainer");
+  // searchTable holds all of our posts
+  var searchTable = $(".tbody");
   var postZipCodeSelect = $("#zipSubmit");
+  var posts;
 
   // =======================================================
   //IN PROGRESS -->  CHOOSE ZIP CODE
@@ -28,20 +29,20 @@ $(document).ready(function() {
       url: "/api/posts/" + id
     })
     .done(function() {
-      getPosts(postCategorySelect.val());
+      getPosts(postZipCodeSelect.val());
     });
   };
 // =======================================================
-
+  //IN PROGRESS -->  DISPLAY ROOMS
 getRooms();
 
 // This function grabs posts from the database and updates the view
-function getRooms(category) {
-  var categoryString = category || "";
-  if (categoryString) {
-    categoryString = "/category/" + categoryString;
+function getRooms(ZipCode) {
+  var ZipCodeString = ZipCode || "";
+  if (ZipCodeString) {
+    ZipCodeString = "/ZipCode/" + ZipCodeString;
   }
-  $.get("/api/posts" + categoryString, function(data) {
+  $.get("/api/posts" + ZipCodeString, function(data) {
     console.log("Posts", data);
     posts = data;
     if (!posts || !posts.length) {
@@ -54,16 +55,41 @@ function getRooms(category) {
 }
 
 function initializeRows() {
-  blogContainer.empty();
+  searchTable.empty();
   var postsToAdd = [];
   for (var i = 0; i < posts.length; i++) {
     postsToAdd.push(createNewRow(posts[i]));
   }
-  blogContainer.append(postsToAdd);
+  searchTable.append(postsToAdd);
 }
 
 // This function constructs a post's HTML
 function createNewRow(post) {
+  //START
+  var newTableRow = $("<tr>"); 
+    //APPEND TO ROW
+    var NameCell = $("<td>");
+      //APPEND TO CELL
+      var NameSpan = $("<span id=propName>");
+    //APPEND TO ROW
+    var DetailsCell = $("<td>");
+      //APPEND TO CELL
+      var DetailsModalButton = $("<a id='viewProperty' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#details'>");
+      //APPEND TO CELL
+      var DetailsDiv1 = $("<div id='details' class='modal wordWrap'>");
+        //APPEND TO DIV1
+        var DetailsDiv2 = $("<div class='property-details left-align'>");
+          //APPEND TO DIV2
+          var webLabel = $("<p class='details wordWrap'>");
+            //APPEND TO LABEL
+            var webLink = $("<a href="!!!URLLINK!!!" style='cursor:pointer' target='_blank'>");
+
+
+
+
+  
+  
+  
   var newPostPanel = $("<div>");
   newPostPanel.addClass("panel panel-default");
   var newPostPanelHeading = $("<div>");
@@ -76,9 +102,9 @@ function createNewRow(post) {
   editBtn.addClass("edit btn btn-default");
   var newPostTitle = $("<h2>");
   var newPostDate = $("<small>");
-  var newPostCategory = $("<h5>");
-  newPostCategory.text(post.category);
-  newPostCategory.css({
+  var newPostZipCode = $("<h5>");
+  newPostZipCode.text(post.ZipCode);
+  newPostZipCode.css({
     float: "right",
     "font-weight": "700",
     "margin-top":
@@ -96,7 +122,7 @@ function createNewRow(post) {
   newPostPanelHeading.append(deleteBtn);
   newPostPanelHeading.append(editBtn);
   newPostPanelHeading.append(newPostTitle);
-  newPostPanelHeading.append(newPostCategory);
+  newPostPanelHeading.append(newPostZipCode);
   newPostPanelBody.append(newPostBody);
   newPostPanel.append(newPostPanelHeading);
   newPostPanel.append(newPostPanelBody);
@@ -106,11 +132,11 @@ function createNewRow(post) {
 
   // This function displays a messgae when there are no posts
   function displayEmpty() {
-    blogContainer.empty();
+    searchTable.empty();
     var messageh2 = $("<h2>");
     messageh2.css({ "text-align": "center", "margin-top": "50px" });
-    messageh2.html("No posts yet for this category, navigate <a href='/cms'>here</a> in order to create a new post.");
-    blogContainer.append(messageh2);
+    messageh2.html("No posts yet for this ZipCode, navigate <a href='/cms'>here</a> in order to create a new post.");
+    searchTable.append(messageh2);
   }
 
 
