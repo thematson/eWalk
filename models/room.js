@@ -1,19 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Room = sequelize.define("Room", {
-    room_id: {
-      type: DataTypes.TINYINT,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
-    ewalk_id: {
-      type: DataTypes.TINYINT,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
-    },
     price: {
       type: DataTypes.SMALLINT,
       allowNull: false,
@@ -34,7 +20,6 @@ module.exports = function(sequelize, DataTypes) {
     status: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-
     },
     closeDate: {
       type: DataTypes.DATE,
@@ -50,6 +35,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   };
-  
+
   return Room;
 };

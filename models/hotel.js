@@ -9,13 +9,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    property_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
-    },
     userName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -43,7 +36,6 @@ module.exports = function(sequelize, DataTypes) {
     phone: {
       type: DataTypes.STRING,
       allowNull: false,
-
       validate: {
         len: [1]
       }
@@ -70,13 +62,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    api_id: {
-      type: DataTypes.STRING,
-      allowNull: true,
-      validate: {
-        len: [1]
-      }
-    }
   });
 
   Hotel.associate = function(models){
