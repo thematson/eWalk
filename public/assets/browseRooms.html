@@ -60,9 +60,7 @@
                                 <thead>
                                   <tr>
                                       <th class=propertyData>Property <br> Name</th>
-                                      <th class=propertyData>Web <br> Address</th>
-                                      <th class=propertyData>Physical <br> Address</th>
-                                      <th class=propertyData>Phone <br> Number</th>
+                                      <th class=propertyData>Property <br> Details</th>
                                       <th class=roomData>Room <br> Type</th>
                                       <th class=roomData>Room <br> Description</th>
                                       <th class=roomData>Room <br> Price</th>
@@ -71,13 +69,27 @@
                         
                                 <tbody>
                                   <tr>
-                                    <td>Renaissance Orlando at SeaWorld®</td>
-                                    <td><a href='http://www.marriott.com/hotels/travel/mcosr-renaissance-orlando-at-seaworld/' style="cursor:pointer" target="_blank">Visit <br> Property Site</a></td>
-                                    <td>6677 Sea Harbor Drive  Orlando  Florida  32821  USA </td>
-                                    <td>+1-407-351-5555</td>
-                                    <td>Presidential Suite</td>
-                                    <td> <a class="btn tooltipped waves-effect waves-red lighten-2 btn-flat" data-position="bottom" data-delay="50" data-tooltip="Presidentia Oversized Guest Room with 3 King Beds and 15 bathrooms. It also has bowling lane">View</a></td>
-                                    <td>$500.87</td>
+                                    <td><span id=propName></span>Renaissance Orlando at SeaWorld®</td></td>
+                                    <td>
+                                        <a id="vewProperty" class="waves-effect waves-light btn modal-trigger red lighten-2" href="#details">View</a>
+                                        <div id="details" class="modal wordWrap">
+                                            <div class="property-details left-align">
+                                                <p class="details wordWrap"> Web Address : <a href='http://www.marriott.com/hotels/travel/mcosr-renaissance-orlando-at-seaworld/' style="cursor:pointer" target="_blank">Visit Property Site</a> </p>
+                                                <p class="details wordWrap"> Physical Address : <span id=address>6677 Sea Harbor Drive  Orlando, FL 32821 USA</span></p>
+                                                <p class="details wordWrap"> Physical Address : <span id=phone>+1-407-351-5555</span></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><span id=type>Presidential Suite</span></td>
+                                    <td> 
+                                        <a id="roomModal" class="waves-effect waves-light btn modal-trigger red lighten-2" href="#room">View</a>
+                                        <div id="room" class="modal wordWrap">
+                                            <div class="room-details left-align">
+                                                <p class="roomDes wordWrap"> Room Description : <br> <span id=descr class="wordWrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
+                                                </div>
+                                        </div>
+                                    </td>
+                                    <td><span id=price>$500.87</span></td>
                                     <td>
                                         <a id="bookRoom" class="waves-effect waves-light btn modal-trigger red lighten-2" href="#modalConfirm">Book</a>
                                         <div id="modalConfirm" class="modal wordWrap">
