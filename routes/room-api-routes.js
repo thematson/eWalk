@@ -22,9 +22,9 @@ app.get("/api/rooms/", function(req, res) {
     });
   });
 
-// POST route for saving a new post
+// Add a Room
 app.post("/api/rooms", function(req, res) {
-  console.log(req.body);
+  console.log("Api-post: " + req.body);
   db.Room.create({
       room_id: req.body.room_id,
       property_id: req.body.property_id,
@@ -34,8 +34,11 @@ app.post("/api/rooms", function(req, res) {
       status: req.body.status,
       closeDate: req.body.closeDate
     })
-    .then(function(dbRoom) {
-      res.json(dbRoom);
+    .then(function() {
+      res.send("/choice");
+    }).catch(function(err){
+      console.log(err);
+      res.json(err);
     });
 });
 

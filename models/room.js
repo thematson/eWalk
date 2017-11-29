@@ -24,7 +24,6 @@ module.exports = function(sequelize, DataTypes) {
     closeDate: {
       type: DataTypes.DATE,
       allowNull: false,
-
     }
   });
 
