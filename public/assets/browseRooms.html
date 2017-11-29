@@ -38,8 +38,19 @@
                     
                     <h1 id=searchHeader>Search rooms</h1>
                     
-                    <br>
-                    
+                        <br>
+
+                    <div class="input-field col s3">
+                        <input placeholder="" id="zip_code" type="text" class="validate">
+                        <label for="zip_code">Zip Code</label>
+                        <button class="modal-action btn waves-effect waves-light red lighten-2" type="submit" form="formId" id="zipSubmit" "action">View Rooms
+                            <i class="material-icons right">view_headline</i>
+                        </button>
+                            <br><br><br>
+                    </div>
+
+                        <br><br>
+
                     <div class="row">
                         <div class="col m12 searchContainer">
                         
@@ -48,25 +59,25 @@
                             <table id=searchTable class="responsive-table highlight centered">
                                 <thead>
                                   <tr>
-                                      <th class=propertyData>Property Name</th>
-                                      <th class=propertyData>Web Address</th>
-                                      <th class=propertyData>Physical Address</th>
-                                      <th class=propertyData>Phone</th>
-                                      <th class=roomData>Room Type</th>
-                                      <th class=roomData>About the Room</th>
-                                      <th class=roomData>Price</th>
+                                      <th class=propertyData>Property <br> Name</th>
+                                      <th class=propertyData>Web <br> Address</th>
+                                      <th class=propertyData>Physical <br> Address</th>
+                                      <th class=propertyData>Phone <br> Number</th>
+                                      <th class=roomData>Room <br> Type</th>
+                                      <th class=roomData>Room <br> Description</th>
+                                      <th class=roomData>Room <br> Price</th>
                                   </tr>
                                 </thead>
                         
                                 <tbody>
                                   <tr>
-                                    <td>Alvin</td>
-                                    <td>Eclair</td>
-                                    <td>$0.87</td>
-                                    <td>Alvin</td>
-                                    <td>Eclair</td>
-                                    <td>$0.87</td>
-                                    <td>$0.87</td>
+                                    <td>Renaissance Orlando at SeaWorld®</td>
+                                    <td><a href='http://www.marriott.com/hotels/travel/mcosr-renaissance-orlando-at-seaworld/' style="cursor:pointer" target="_blank">Visit <br> Property Site</a></td>
+                                    <td>6677 Sea Harbor Drive  Orlando  Florida  32821  USA </td>
+                                    <td>+1-407-351-5555</td>
+                                    <td>Presidential Suite</td>
+                                    <td> <a class="btn tooltipped waves-effect waves-red lighten-2 btn-flat" data-position="bottom" data-delay="50" data-tooltip="Presidentia Oversized Guest Room with 3 King Beds and 15 bathrooms. It also has bowling lane">View</a></td>
+                                    <td>$500.87</td>
                                     <td>
                                         <a id="bookRoom" class="waves-effect waves-light btn modal-trigger red lighten-2" href="#modalConfirm">Book</a>
                                         <div id="modalConfirm" class="modal wordWrap">
@@ -174,7 +185,13 @@
     <!-- ======================================================================== -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">$(document).ready(function () { $('.modal').modal(); });</script>
+    <script type="text/javascript">
+    $(document).ready(function () { $('.modal').modal(); });
+    $(document).ready(function(){
+    $('.tooltipped').tooltip({delay: 50});
+  });
+    </script>
+    
     <script src="/public/assets/javascript/browseRooms.js"></script>
 </body>
 

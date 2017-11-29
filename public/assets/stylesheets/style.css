@@ -47,6 +47,22 @@ main {
   margin:40px;
 }
 
+.propertyData {
+  color: rgba(223,105,110,1);
+}
+
+.roomData {
+  color: #283593;
+}
+
+td, th {
+  min-width:75px !important;
+  max-width:150px !important;
+  min-height:75px !important;
+  word-wrap: break-word !important;
+  font-size:12px;
+}
+
 .bottomPadding {
   padding-bottom:280px !important;
 }
