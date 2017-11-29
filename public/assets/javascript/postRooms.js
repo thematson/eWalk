@@ -10,12 +10,12 @@ $(document).ready(function() {
                 closeOnSelect: false // Close upon selecting a date,
             });
 
-            var roomTypeInput = $("#roomSelected"); //don't remember how to capture the value
+            var roomTypeInput = $("#roomSelected");
             var roomPriceInput = $("#roomPrice");
             var roomStatusInput = $("#disabled");
             var checkoutDateInput = $(".datepicker");
             var aboutRoomInput = $("#aboutRoom");
-            //put onclick submit button use register.js for helper
+
 
             $("#submit-Room").click(function(e) {
                 console.log("Submit Room button was clicked!");
@@ -45,7 +45,7 @@ $(document).ready(function() {
                     roomStatusInput.val("");
                     checkoutDateInput.val("");
                 } else {
-                    alert("You left something blank!");
+                    // alert("You left something blank!");
                 }
             });
 
