@@ -6,20 +6,20 @@ $(function() {
     var phoneInput = $("#property_phone");
     var aboutUsInput = $("#textarea1");
     var routingInput = $("#property_routing");
-    var userNameInput = $("#userName");
-    var passwordInput = $("#password");
+    var userNameInput = $("#registerUserName");
+    var passwordInput = $("#registerPassword");
 
     $("#submit-Register").click(function(e) {
         console.log("Register button was clicked!");
         e.preventDefault();
 
         var hotelData = {
-            name: nameInput.val().trim(),
+            hotel_name: nameInput.val().trim(),
             url: urlInput.val().trim(),
             address: addressInput.val().trim(),
             phone: phoneInput.val().trim(),
             aboutUs: aboutUsInput.val().trim(),
-            routing: routingInput.val().trim(),
+            routingNumber: routingInput.val().trim(),
             userName: userNameInput.val().trim(),
             password: passwordInput.val().trim()
         };
@@ -29,14 +29,7 @@ $(function() {
         }
 
         //If we have a userName and password we run the registerNewHotel function and clear the Form
-        registerNewHotel(hotelData.nameInput,
-            hotelData.urlInput,
-            hotelData.addressInput,
-            hotelData.phoneInput,
-            hotelData.aboutUsInput,
-            hotelData.routingInput,
-            hotelData.userName,
-            hotelData.password);
+        registerNewHotel(hotelData);
 
         nameInput.val("");
         urlInput.val("");
@@ -49,18 +42,9 @@ $(function() {
     });
 
 
-    function registerNewHotel(name, url, address, phone, aboutUs, routing, userName, password) {
-            $.post("/api/hotels/register", {
-                hotel_name: hotel_name,
-                url: url,
-                address: address,
-                phone: phone,
-                property_id: property_id,
-                aboutUs: aboutUs,
-                routing: routing,
-                userName: userName,
-                password: password
-            }).then(function(data) {
+    function registerNewHotel(hotelData) {
+            $.post("/api/hotels/register", hotelData
+            ).then(function(data) {
                 window.location.replace(data);
             }).catch(handleLoginErr);
         }

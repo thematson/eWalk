@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   //log in
   app.post("/api/hotels/login", passport.authenticate("local"), function(req, res){
-    res.send("Authorized!");
+    res.send("/choice");
 
   });
 
