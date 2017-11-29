@@ -16,7 +16,8 @@ $(function() {
         };
         //need to include if userName or password isn't in the database
         if (!hotelLogin.userName || !hotelLogin.password) {
-            alert("you must enter a valid username and/or password");
+            $("#password").append("")
+            // alert("you must enter a valid username and/or password");
             userNameInput.val("");
             passwordInput.val("");
         }
@@ -33,7 +34,7 @@ $(function() {
         $.post("/api/hotels/login", hotelLogin).then(function(data) {
             window.location.replace(data);
         }).catch(function(err) {
-            alert("Login incorrect.");
+            // alert("Login incorrect.");
         });
     };
 });
@@ -52,9 +53,9 @@ $("#formValidate").validate({
         //For custom messages
         messages: {
             property_id: {
-                required: "Enter a UserName"
+                required: ""
             },
-            password: "Your password must be at least 4 characters",
+            password: "",
         },
         //might need to change this later
         errorElement: 'div',
