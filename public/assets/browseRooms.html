@@ -34,9 +34,126 @@
     <main class="indigo darken-3">
         <div class="container">
             <div class="row">
-                <div class="col m12 headerRow ">
-                    <h1 id=postLogo>post a room</h1>
+                <div class="col m12 ">
+                    
+                    <h1 id=searchHeader>Search rooms</h1>
+                    
                     <br>
+                    
+                    <div class="row">
+                        <div class="col m12 searchContainer">
+                        
+                        <!-- DELETE -->
+                        <!-- Will be created in browseRooms.js -->
+                            <table id=searchTable class="responsive-table highlight centered">
+                                <thead>
+                                  <tr>
+                                      <th class=propertyData>Property Name</th>
+                                      <th class=propertyData>Web Address</th>
+                                      <th class=propertyData>Physical Address</th>
+                                      <th class=propertyData>Phone</th>
+                                      <th class=roomData>Room Type</th>
+                                      <th class=roomData>About the Room</th>
+                                      <th class=roomData>Price</th>
+                                  </tr>
+                                </thead>
+                        
+                                <tbody>
+                                  <tr>
+                                    <td>Alvin</td>
+                                    <td>Eclair</td>
+                                    <td>$0.87</td>
+                                    <td>Alvin</td>
+                                    <td>Eclair</td>
+                                    <td>$0.87</td>
+                                    <td>$0.87</td>
+                                    <td>
+                                        <a id="bookRoom" class="waves-effect waves-light btn modal-trigger red lighten-2" href="#modalConfirm">Book</a>
+                                        <div id="modalConfirm" class="modal wordWrap">
+                                            <div class="modal-content confirmContent wordWrap">
+                                                <h4 class=wordWrap>Are you sure you would like to book this room?</h4>
+
+                                                <div class="modal-footer">
+
+                                                    <button class="modal-action btn waves-effect waves-light red lighten-2" type="submit" form="formId" id="yes" "action">Yes
+                                                        <i class="material-icons">check</i>
+                                                    </button>
+
+                                                    <button class="modal-action btn waves-effect waves-light red lighten-2" type="submit" form="formId" id="no" "action">No
+                                                        <i class="material-icons">close</i>
+                                                    </button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                        <td>Alvin</td>
+                                        <td>Eclair</td>
+                                        <td>$0.87</td>
+                                        <td>Alvin</td>
+                                        <td>Eclair</td>
+                                        <td>$0.87</td>
+                                        <td>$0.87</td>
+                                        <td>
+                                            <a id="bookRoom" class="waves-effect waves-light btn modal-trigger red lighten-2" href="#modalConfirm">Book</a>
+                                            <div id="modalConfirm" class="modal wordWrap">
+                                                <div class="modal-content confirmContent wordWrap">
+                                                    <h4 class=wordWrap>Are you sure you would like to book this room?</h4>
+    
+                                                    <div class="modal-footer">
+    
+                                                        <button class="modal-action btn waves-effect waves-light red lighten-2" type="submit" form="formId" id="yes" "action">Yes
+                                                            <i class="material-icons">check</i>
+                                                        </button>
+    
+                                                        <button class="modal-action btn waves-effect waves-light red lighten-2" type="submit" form="formId" id="no" "action">No
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                  </tr>
+                                  <tr>
+                                        <td>Alvin</td>
+                                        <td>Eclair</td>
+                                        <td>$0.87</td>
+                                        <td>Alvin</td>
+                                        <td>Eclair</td>
+                                        <td>$0.87</td>
+                                        <td>$0.87</td>
+                                        <td>
+                                            <a id="bookRoom" class="waves-effect waves-light btn modal-trigger red lighten-2 " href="#modalConfirm">Book</a>
+                                            <div id="modalConfirm" class="modal wordWrap">
+                                                <div class="modal-content confirmContent wordWrap">
+                                                    <h4 class=wordWrap>Are you sure you would like to book this room?</h4>
+    
+                                                    <div class="modal-footer">
+    
+                                                        <button class="modal-action btn waves-effect waves-light red lighten-2" type="submit" form="formId" id="yes" "action">Yes
+                                                            <i class="material-icons">check</i>
+                                                        </button>
+    
+                                                        <button class="modal-action btn waves-effect waves-light red lighten-2" type="submit" form="formId" id="no" "action">No
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+
+                        <!-- Will be created in browseRooms.js -->
+
+                        </div>
+                    </div>
 
                 </div>
             </div>
