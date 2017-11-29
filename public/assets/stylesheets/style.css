@@ -60,11 +60,10 @@ main {
 }
 
 #descr, .room-details, #room  {
-  max-width:350px !important;
   word-wrap: break-word !important;
 }
 
-#address, #phone {
+#address, #phone, #descr {
   font-weight: normal;
 }
 

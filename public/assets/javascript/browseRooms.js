@@ -65,12 +65,16 @@ function initializeRows() {
 
 // This function constructs a post's HTML
 function createNewRow(post) {
-  //START
-  var newTableRow = $("<tr>"); 
+  //========TABLE START ==============================
+  var newTableRow = $("<tr>");
+
+  //========PROPERTY NAME ============================
     //APPEND TO ROW
     var NameCell = $("<td>");
       //APPEND TO CELL
       var NameSpan = $("<span id=propName>");
+
+  //========PROPERTY DETAILS MODAL START==============
     //APPEND TO ROW
     var DetailsCell = $("<td>");
       //APPEND TO CELL
@@ -78,17 +82,69 @@ function createNewRow(post) {
       //APPEND TO CELL
       var DetailsDiv1 = $("<div id='details' class='modal wordWrap'>");
         //APPEND TO DIV1
-        var DetailsDiv2 = $("<div class='property-details left-align'>");
+        var DetailsDiv2 = $("<div class='modal-content property-details left-align'>");
           //APPEND TO DIV2
           var webLabel = $("<p class='details wordWrap'>");
             //APPEND TO LABEL
-            var webLink = $("<a href="!!!URLLINK!!!" style='cursor:pointer' target='_blank'>");
+            var webLink = $("<a href=" + !!!URLLINK!!!MUST!!CHANGE + "style='cursor:pointer' target='_blank'>");
+          //APPEND TO DIV2
+          var addressLabel = $("<p class='details wordWrap'>");
+            //APPEND TO LABEL
+            var addressSpan = $("<span id=address>");
+          //APPEND TO DIV2
+          var phoneLabel = $("<p class='details wordWrap'>");
+            //APPEND TO LABEL
+            var phoneSpan = $("<span id=phone>");
 
+  //========ROOM TYPE =================================
+    //APPEND TO ROW
+    var RoomTypeCell = $("<td>");
+      //APPEND TO CELL
+      var RoomTypeSpan = $("<span id=type>");
 
+  //========ROOM DESCRIPTION MODAL START==============
+    //APPEND TO ROW
+    var DescriptionCell = $("<td>");
+      //APPEND TO CELL
+      var DescriptionModalButton = $("<a id='roomModal' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#room'>");
+      //APPEND TO CELL
+      var DescriptionDiv1 = $("<div id='room' class='modal wordWrap'>");
+        //APPEND TO DIV1
+        var DescriptionDiv2 = $("<div class='modal-content room-details left-align'>");
+          //APPEND TO DIV2
+          var DescriptionLabel = $("<p class='roomDes wordWrap'>");
+            //APPEND TO LABEL
+            var DescriptionSpan = $("<span id='descr' class='wordWrap'>");
 
-
+  //========ROOM TYPE =================================
+    //APPEND TO ROW
+    var PriceCell = $("<td>");
+      //APPEND TO CELL
+      var PriceSpan = $("<span id=price>");
   
-  
+  //========BOOK ROOM MODAL START==============
+    //APPEND TO ROW
+    var BookCell = $("<td>");
+      //APPEND TO CELL
+      var ConfirmButton = $("<a id='bookRoom' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#modalConfirm'>");
+      //APPEND TO CELL
+      var ConfirmDiv1 = $("<div id='modalConfirm' class='modal wordWrap'>");
+        //APPEND TO DIV1
+        var ConfirmDiv2 = $("<div class='modal-content confirmContent wordWrap'>");
+          //APPEND TO DIV2
+          var ConfirmHeader = $("<h4 class='wordWrap'>");
+          //APPEND TO DIV2
+          var addressLabel = $("<p class='details wordWrap'>");
+            //APPEND TO LABEL
+            var addressSpan = $("<span id=address>");
+          //APPEND TO DIV2
+          var phoneLabel = $("<p class='details wordWrap'>");
+            //APPEND TO LABEL
+            var phoneSpan = $("<span id=phone>"); 
+      
+
+
+
   
   var newPostPanel = $("<div>");
   newPostPanel.addClass("panel panel-default");
