@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 
   $(document).on("submit", "#modal2", addHotel);
-  // $("#submit-Login").on("click", proceed);
+  
 
  var hotel = [];
 
