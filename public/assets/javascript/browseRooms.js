@@ -134,13 +134,15 @@ function createNewRow(post) {
           //APPEND TO DIV2
           var ConfirmHeader = $("<h4 class='wordWrap'>");
           //APPEND TO DIV2
-          var addressLabel = $("<p class='details wordWrap'>");
-            //APPEND TO LABEL
-            var addressSpan = $("<span id=address>");
-          //APPEND TO DIV2
-          var phoneLabel = $("<p class='details wordWrap'>");
-            //APPEND TO LABEL
-            var phoneSpan = $("<span id=phone>"); 
+          var ConfirmDiv3 = $("<div class='modal-footer'>");
+            //APPEND TO DIV3
+            var YesButton = $(" <button class='modal-action btn waves-effect waves-light red lighten-2' type='submit' form='formId' id='yes' 'action'>");
+              //APPEND TO BUTTON
+              var YesIcon = $("<i class='material-icons'>");
+            //APPEND TO DIV3
+            var NoButton = $(" <button class='modal-action btn waves-effect waves-light indigo darken-3' type='submit' form='formId' id='no' 'action'>");
+              //APPEND TO BUTTON
+              var NoIcon = $("<i class='material-icons'>");
       
 
 
