@@ -7,9 +7,17 @@ $(document).ready(function() {
 
   // =======================================================
   //IN PROGRESS -->  CHOOSE ZIP CODE
+function addZip () {
+  // $.get("/api/hotels/", function(data) {
+  //   console.log(data);
+  // });
+  $.get("/api/hotels", function(data){
+    console.log(data);
+  });
+  // console.log(req.user);
+}
 
-
-
+addZip();
 
   // =======================================================
   //IN PROGRESS -->  BOOKING ROOM
@@ -86,7 +94,7 @@ function createNewRow(post) {
           //APPEND TO DIV2
           var webLabel = $("<p class='details wordWrap'>");
             //APPEND TO LABEL
-            var webLink = $("<a href=" + !!!URLLINK!!!MUST!!CHANGE + "style='cursor:pointer' target='_blank'>");
+            var webLink = $("<a href=" + /* !!!URLLINK!!!MUST!!CHANGE  + */ "style='cursor:pointer' target='_blank'>");
           //APPEND TO DIV2
           var addressLabel = $("<p class='details wordWrap'>");
             //APPEND TO LABEL

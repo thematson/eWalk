@@ -3,6 +3,7 @@ $(function() {
     var nameInput = $("#property_name");
     var urlInput = $("#property_url");
     var addressInput = $("#property_address");
+    var zipInput = $("#property_zip");
     var phoneInput = $("#property_phone");
     var aboutUsInput = $("#textarea1");
     var routingInput = $("#property_routing");
@@ -17,6 +18,7 @@ $(function() {
             hotel_name: nameInput.val().trim(),
             url: urlInput.val().trim(),
             address: addressInput.val().trim(),
+            zip: zipInput.val().trim(),
             phone: phoneInput.val().trim(),
             aboutUs: aboutUsInput.val().trim(),
             routingNumber: routingInput.val().trim(),
@@ -34,6 +36,7 @@ $(function() {
         nameInput.val("");
         urlInput.val("");
         addressInput.val("");
+        zipInput.val("");
         phoneInput.val("");
         aboutUsInput.val("");
         routingInput.val("");
@@ -43,6 +46,7 @@ $(function() {
 
 
     function registerNewHotel(hotelData) {
+            console.log(hotelData);
             $.post("/api/hotels/register", hotelData
             ).then(function(data) {
                 window.location.replace(data);

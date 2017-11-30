@@ -33,6 +33,13 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     },
+    zipCode: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [5]
+      }
+    },
     phone: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -61,7 +68,7 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1]
       }
-    },
+    }
   });
 
   Hotel.associate = function(models){
