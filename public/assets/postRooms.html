@@ -37,7 +37,7 @@
                 <form class="col s12">
                     <div class="row">
                         <div class="input-field col s6">
-                            <select>
+                            <select id="roomSelected">
                                 <option value="" disabled selected>Choose your room style</option>
                                 <option value="1">Hotel Room</option>
                                 <option value="2">Hotel Suite</option>
@@ -55,12 +55,12 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input disabled value="Available" id="disabled" type="text" class="validate">
-                            <label for="disabled">Status</label>
+                            <input disabled value="1" id="disabled" type="text" class="validate">
+                            <label for="1">Status</label>
                         </div>
                         <div class="input-field col s6">
                             <input type="text" class="datepicker">
-                            <label for="roomPrice">Checkout Date</label>
+                            <label for="datepicker">Checkout Date</label>
                         </div>
                     </div>
                     <div class="row">
@@ -73,7 +73,10 @@
 
                             <!-- </form>                         -->
                     </div>
-                    <button id="submit-Room" class="btn waves-effect waves-light" type="submit" name="action">Submit
+
+
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id="submit-Room">Submit
+
                         <i class="material-icons left">add_circle</i>
                     </button>
                 </form>

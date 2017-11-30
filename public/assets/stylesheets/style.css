@@ -47,6 +47,38 @@ main {
   margin:40px;
 }
 
+.propertyData {
+  color: rgba(223,105,110,1);
+}
+
+.property-details {
+  padding:40px;
+}
+
+.details {
+  font-weight: bold;
+}
+
+#descr, .room-details, #room  {
+  word-wrap: break-word !important;
+}
+
+#address, #phone, #descr {
+  font-weight: normal;
+}
+
+.roomData {
+  color: #283593;
+}
+
+td, th {
+  min-width:100px !important;
+  max-width:150px !important;
+  min-height:75px !important;
+  word-wrap: break-word !important;
+  font-size:12px;
+}
+
 .bottomPadding {
   padding-bottom:280px !important;
 }
@@ -137,6 +169,7 @@ blockquote {
   .right {
     padding-left:180px !important;
   }
+
 }
 
 
