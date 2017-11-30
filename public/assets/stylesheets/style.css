@@ -15,12 +15,39 @@ main {
   margin:0px;
 }
 
+#welcomeLogo2 {
+  font-family: 'Oswald', sans-serif;
+  font-size:20px;
+  color: white;
+  margin:0px;  
+}
+
+.brick{
+  background-color:rgba(223,105,110,1);
+}
+
+.brick2{
+  background-color:rgba(223,105,110,1);
+  padding: 10px 0;
+}
+
+#welcome {
+  color:white;
+  margin:0px !important;
+  padding: 10px 0px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 #postLogo {
   font-family: 'Oswald', sans-serif;
   font-size: 160px;
   color: #283593;
   margin: 0px;
   cursor: pointer;
+}
+
+Label::after {
+  color:rgba(223,105,110,1);
 }
 
 #searchLogo {
@@ -83,15 +110,30 @@ td, th {
   padding-bottom:280px !important;
 }
 
-.brick{
-  background-color:rgba(223,105,110,1);
+.noLeftPadding {
+  padding-left: 0px !important;
 }
 
-#welcome {
+#zip_code {
   color:white;
-  margin:0px !important;
-  padding: 10px 0px;
-  font-family: 'Montserrat', sans-serif;
+}
+
+.input-field input[type=text]:focus + label  {
+  color:rgba(223,105,110,1) !important;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid rgba(223,105,110,1) !important;
+  box-shadow: 0 1px 0 0 rgba(223,105,110,0) !important;
+}
+
+.input-field input[type=password]:focus + label  {
+  color:rgba(223,105,110,1) !important;
+}
+
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid rgba(223,105,110,1) !important;
+  box-shadow: 0 1px 0 0 rgba(223,105,110,0) !important;
 }
 
 .pac-container {
