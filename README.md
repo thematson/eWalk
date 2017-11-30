@@ -1,4 +1,4 @@
-<h1>eWalk</h1>
+<h1>eWalk.io</h1>
 <p>Be a Jedi! When you've overbooked your hotel, find a room faster and more efficiently with eWalk!</p>
 
 ![Screenshot](public/assets/images/ewok.jpeg)
