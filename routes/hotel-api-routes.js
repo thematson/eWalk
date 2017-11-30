@@ -35,6 +35,7 @@ module.exports = function(app) {
       password: req.body.password,
       url: req.body.url,
       address: req.body.address,
+      zipCode: req.body.zip,
       phone: req.body.phone,
       aboutUs: req.body.aboutUs,
       routingNumber: req.body.routingNumber,

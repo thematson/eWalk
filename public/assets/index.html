@@ -95,10 +95,17 @@
           <!-- Property Address Form ========================================== -->
               <div class="row">
                 <div class="input-field col s12">
-                  <input placeholder="123 Tall Tree Lane, Orlando, Florida, 32821" id="property_address" type="text" class="validate"></input>
+                  <input placeholder="123 Tall Tree Lane, Orlando, FL" id="property_address" type="text" class="validate"></input>
                   <label for="property_address">Address</label>
                 </div>
               </div>
+          <!-- Property Zip Form ========================================== -->
+          <div class="row">
+            <div class="input-field col s12">
+              <input placeholder="32821" id="property_zip" type="text" class="validate"></input>
+              <label for="property_address">Zip Code</label>
+            </div>
+          </div>
           <!-- Property Phone Number Form ===================================== -->
               <div class="row">
                 <div class="input-field col s12">
@@ -191,15 +198,6 @@
 			<script>
       var placeSearch, autocomplete;
 
-        var componentForm = {
-          street_number: 'short_name',
-          route: 'long_name',
-          locality: 'long_name',
-          administrative_area_level_1: 'short_name',
-          country: 'long_name',
-          postal_code: 'short_name'
-        };
-
         function initAutocomplete() {
           console.log('function autocom clled');
           // Create the autocomplete object, restricting the search to geographical
@@ -216,16 +214,25 @@
         function fillInAddress() {
           var returnData = autocomplete.gm_bindings_.bounds[6].Kc.place;
           // Get the place details from the autocomplete object.
-
+          var address = "";
           var place = autocomplete.getPlace();
 
+          for (var i = 0; i < place.address_components.length; i++) {
+            if (i === 3 || i === 5 || i === 6){
+            } else{
+             address = address + place.address_components[i].short_name + " ";
+            }
+          }
+          console.log(place.address_components[0]);
+          console.log("address is " + address);
+          var zipCode = place.address_components[6].short_name;
 
           document.getElementById('property_url').value = place.website;
-          document.getElementById('property_address').value = place.formatted_address;
+          document.getElementById('property_address').value = address;
+          document.getElementById('property_zip').value = zipCode;
           document.getElementById('property_phone').value = place.formatted_phone_number;
           document.getElementById('property_routing').value = place.place_id;
-
-
+          
         }
 
         // Bias the autocomplete object to the user's geographical location,
