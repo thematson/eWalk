@@ -75,17 +75,16 @@ function createNewRow(post) {
     newTableRow.append(NameCell);
       //APPEND TO CELL
       var NameSpan = $("<span id=propName>");
-      NameCell.append(NameSpan);
-      var
       NameSpan.text(post.hotel_name);
+      NameCell.append(NameSpan);
   //========PROPERTY DETAILS MODAL START==============
     //APPEND TO ROW
     var DetailsCell = $("<td>");
     newTableRow.append(DetailsCell);
       //APPEND TO CELL
       var DetailsModalButton = $("<a id='viewProperty' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#details'>");
-      DetailsCell.append(DetailsModalButton);
       DetailsModalButton.text("View");
+      DetailsCell.append(DetailsModalButton);
       //APPEND TO CELL
       var DetailsDiv1 = $("<div id='details' class='modal wordWrap'>");
       DetailsCell.append(DetailsDiv1);
@@ -94,31 +93,46 @@ function createNewRow(post) {
         DetailsDiv1.append(DetailsDiv2);
           //APPEND TO DIV2
           var webLabel = $("<p class='details wordWrap'>");
+          webLabel.text("Web Address : ");
           DetailsDiv2.append(webLabel);
-          webLabel.text("Web Address : ")
             //APPEND TO LABEL
             var webLink = $("<a href=" + post.url + "style='cursor:pointer' target='_blank'>");
-            webLink.text("Visit Property Site")
+            webLink.text("Visit Property Site");
+            webLabel.append(webLink);
           //APPEND TO DIV2
           var addressLabel = $("<p class='details wordWrap'>");
+          addressLabel.text("Physical Address : ");
+          DetailsDiv2.append(addressLabel);
             //APPEND TO LABEL
             var addressSpan = $("<span id=address>");
+            addressSpan.text(post.address);
+            addressLabel.append(addressSpan);
           //APPEND TO DIV2
           var phoneLabel = $("<p class='details wordWrap'>");
+          phoneLabel.text("Phone Number : ");
+          DetailsDiv2.append(phoneLabel);
             //APPEND TO LABEL
             var phoneSpan = $("<span id=phone>");
+            phoneSpan.text(post.phone);
+            phoneLabel.append(phoneSpan);
 
   //========ROOM TYPE =================================
     //APPEND TO ROW
     var RoomTypeCell = $("<td>");
+    newTableRow.append(RoomTypeCell);
       //APPEND TO CELL
       var RoomTypeSpan = $("<span id=type>");
+      RoomTypeSpan.text(post.roomType);
+      RoomTypeCell.append(RoomTypeSpan);
 
   //========ROOM DESCRIPTION MODAL START==============
     //APPEND TO ROW
     var DescriptionCell = $("<td>");
+    newTableRow.append(DescriptionCell);
       //APPEND TO CELL
       var DescriptionModalButton = $("<a id='roomModal' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#room'>");
+      DescriptionModalButton.text("View");
+      DescriptionCell.append(DescriptionModalButton);
       //APPEND TO CELL
       var DescriptionDiv1 = $("<div id='room' class='modal wordWrap'>");
         //APPEND TO DIV1
