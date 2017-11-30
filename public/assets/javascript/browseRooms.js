@@ -135,32 +135,49 @@ function createNewRow(post) {
       DescriptionCell.append(DescriptionModalButton);
       //APPEND TO CELL
       var DescriptionDiv1 = $("<div id='room' class='modal wordWrap'>");
+      DescriptionCell.append(DescriptionDiv1);
         //APPEND TO DIV1
         var DescriptionDiv2 = $("<div class='modal-content room-details left-align'>");
+        DescriptionDiv1.append(DescriptionDiv2);
           //APPEND TO DIV2
           var DescriptionLabel = $("<p class='roomDes wordWrap'>");
+          DescriptionLabel.text("Room Description : ");
+          DescriptionDiv2.append(DescriptionLabel);
             //APPEND TO LABEL
             var DescriptionSpan = $("<span id='descr' class='wordWrap'>");
+            DescriptionSpan.text(post.aboutRoom);
+            DescriptionLabel.append(DescriptionSpan);
 
   //========ROOM TYPE =================================
     //APPEND TO ROW
     var PriceCell = $("<td>");
+    newTableRow.append(PriceCell);
       //APPEND TO CELL
       var PriceSpan = $("<span id=price>");
+      PriceSpan.text(post.price);
+      PriceCell.append(PriceSpan);
   
   //========BOOK ROOM MODAL START==============
     //APPEND TO ROW
     var BookCell = $("<td>");
+    newTableRow.append(BookCell);
       //APPEND TO CELL
       var ConfirmButton = $("<a id='bookRoom' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#modalConfirm'>");
+      ConfirmModalButton.text("Book");
+      BookCell.append(ConfirmModalButton);
       //APPEND TO CELL
       var ConfirmDiv1 = $("<div id='modalConfirm' class='modal wordWrap'>");
+      BookCell.append(ConfirmDiv1);
         //APPEND TO DIV1
         var ConfirmDiv2 = $("<div class='modal-content confirmContent wordWrap'>");
+        ConfirmDiv1.append(ConfirmDiv2);
           //APPEND TO DIV2
           var ConfirmHeader = $("<h4 class='wordWrap'>");
+          ConfirmDiv2.text("Are you sure you would like to book this room?");
+          ConfirmDiv2.append(ConfirmHeader);
           //APPEND TO DIV2
           var ConfirmDiv3 = $("<div class='modal-footer'>");
+          ConfirmDiv2.append(ConfirmDiv3);
             //APPEND TO DIV3
             var YesButton = $(" <button class='modal-action btn waves-effect waves-light red lighten-2' type='submit' form='formId' id='yes' 'action'>");
               //APPEND TO BUTTON
@@ -170,7 +187,8 @@ function createNewRow(post) {
               //APPEND TO BUTTON
               var NoIcon = $("<i class='material-icons'>");
       
-
+    newTableRow.data("post", post);
+    return newTableRow;
 
 
   
