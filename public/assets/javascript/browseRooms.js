@@ -75,23 +75,30 @@ function createNewRow(post) {
     newTableRow.append(NameCell);
       //APPEND TO CELL
       var NameSpan = $("<span id=propName>");
-      NameCell.append(NameSpan)
-      NameSpan.text(Hotel.hotel_name)
+      NameCell.append(NameSpan);
+      var
+      NameSpan.text(post.hotel_name);
   //========PROPERTY DETAILS MODAL START==============
     //APPEND TO ROW
     var DetailsCell = $("<td>");
-    
-
+    newTableRow.append(DetailsCell);
       //APPEND TO CELL
       var DetailsModalButton = $("<a id='viewProperty' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#details'>");
+      DetailsCell.append(DetailsModalButton);
+      DetailsModalButton.text("View");
       //APPEND TO CELL
       var DetailsDiv1 = $("<div id='details' class='modal wordWrap'>");
+      DetailsCell.append(DetailsDiv1);
         //APPEND TO DIV1
         var DetailsDiv2 = $("<div class='modal-content property-details left-align'>");
+        DetailsDiv1.append(DetailsDiv2);
           //APPEND TO DIV2
           var webLabel = $("<p class='details wordWrap'>");
+          DetailsDiv2.append(webLabel);
+          webLabel.text("Web Address : ")
             //APPEND TO LABEL
-            var webLink = $("<a href=" + !!!URLLINK!!!MUST!!CHANGE + "style='cursor:pointer' target='_blank'>");
+            var webLink = $("<a href=" + post.url + "style='cursor:pointer' target='_blank'>");
+            webLink.text("Visit Property Site")
           //APPEND TO DIV2
           var addressLabel = $("<p class='details wordWrap'>");
             //APPEND TO LABEL
