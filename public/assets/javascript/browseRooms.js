@@ -65,18 +65,23 @@ function initializeRows() {
 
 // This function constructs a post's HTML
 function createNewRow(post) {
+
   //========TABLE START ==============================
   var newTableRow = $("<tr>");
 
   //========PROPERTY NAME ============================
     //APPEND TO ROW
     var NameCell = $("<td>");
+    newTableRow.append(NameCell);
       //APPEND TO CELL
       var NameSpan = $("<span id=propName>");
-
+      NameCell.append(NameSpan)
+      NameSpan.text(Hotel.hotel_name)
   //========PROPERTY DETAILS MODAL START==============
     //APPEND TO ROW
     var DetailsCell = $("<td>");
+    
+
       //APPEND TO CELL
       var DetailsModalButton = $("<a id='viewProperty' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#details'>");
       //APPEND TO CELL
