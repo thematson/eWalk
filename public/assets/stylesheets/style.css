@@ -107,7 +107,10 @@ td, th {
 .right {
   padding-left:50px !important;
 }
-
+/*postRoom submit button*/
+#submit-Room {
+  background-color: #283593 !important;
+}
 #login, #register {
   margin: 70px 0px;
   padding:10px;
@@ -124,7 +127,7 @@ blockquote {
   margin: 40px 0px !important;
 }
 
-@media only screen and (max-width: 1400px) 
+@media only screen and (max-width: 1400px)
 {
   .right {
     padding:80px 0px !important;
@@ -153,7 +156,7 @@ blockquote {
 
 }
 
-@media only screen and (max-width: 1200px) 
+@media only screen and (max-width: 1200px)
 {
   .right {
     padding-left:200px !important;
@@ -161,7 +164,7 @@ blockquote {
 
 }
 
-@media only screen and (max-width: 1000px) 
+@media only screen and (max-width: 1000px)
 {
   .right {
     padding-left:180px !important;
@@ -171,7 +174,7 @@ blockquote {
 
 
 
-@media only screen and (max-width: 850px) 
+@media only screen and (max-width: 850px)
 {
   .right {
     padding:40px 0px !important;
@@ -192,7 +195,7 @@ blockquote {
 
 }
 
-@media only screen and (max-width: 700px) 
+@media only screen and (max-width: 700px)
 {
   .right {
     padding:60px 0px !important;
@@ -219,7 +222,7 @@ blockquote {
 
 }
 
-@media only screen and (max-width: 600px) 
+@media only screen and (max-width: 600px)
 {
   #welcomeLogo {
     font-size:100px;
