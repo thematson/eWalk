@@ -14,7 +14,7 @@ app.get("/api/rooms/", function(req, res) {
 
 // Get route for returning rooms of a specific status
   app.get("/api/rooms", function(req, res) {
-    console.log(passport);
+    
     db.Room.findAll({
       where: status === 1,
       include: [{
