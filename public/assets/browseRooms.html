@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <title> eWalk.io </title>
@@ -10,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!--Import style.css-->
     <link rel="stylesheet" type="text/css" href="/public/assets/stylesheets/style.css">
-    <!--Import Google Fsnts-->
+    <!--Import Google F0nts-->
     <link href="https://fonts.googleapis.com/css?family=Dosis:300|Montserrat:300|Oswald" rel="stylesheet">
 
     <meta charset="utf-8">
@@ -19,23 +18,22 @@
 </head>
 
 <body class="grey lighten-5">
-    <!-- ======================================================================== -->
-    <!-- HEADER ///////////////////////////////////////////////////////////////// -->
-    <!-- ======================================================================== -->
-    <header class="indigo darken-3">
-        <div class="row brick2 z-depth-4 waves-red">
-            <div class="container">
-                <p id="welcomeLogo2"> eWalk.io</p>
-            </div>
-        </div>
-
-    </header>
-
-    <main class="indigo darken-3">
+<!-- ======================================================================== -->
+<!-- HEADER ///////////////////////////////////////////////////////////////// -->
+<!-- ======================================================================== -->
+<header class="indigo darken-3">
+    <div class="row brick2 z-depth-4 waves-red">
         <div class="container">
-            <div class="row">
-                <div class="col m12 ">    
-                    <h1 id=searchHeader>Search rooms</h1><br>
+            <p id="welcomeLogo2"> eWalk.io</p>
+        </div>
+    </div>
+</header>
+
+<main class="indigo darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col m12 ">    
+                <h1 id=searchHeader>Search rooms</h1><br>
                     <!-- <div class="input-field col s3 noLeftPadding">
                         <input placeholder="" id="zip_code" type="text" class="validate">
                         <label class="noLeftPadding" for="zip_code">Zip Code</label>
@@ -43,21 +41,20 @@
                             <i class="material-icons right">view_headline</i>
                         </button><br><br><br>
                     </div> //-->
-                        <br>
-                    <div class="row">
-                        <div class="col m12 searchContainer hoverable">
-                        
-                            <table id=searchTable class="responsive-table highlight centered">
-                                <thead>
-                                  <tr>
-                                      <th class=propertyData>Property <br> Name</th>
-                                      <th class=propertyData>Property <br> Details</th>
-                                      <th class=roomData>Room <br> Type</th>
-                                      <th class=roomData>Room <br> Description</th>
-                                      <th class=roomData>Room <br> Price</th>
-                                  </tr>
-                                </thead>
-                                <tbody id=tableBody>
+                    <br>
+                <div class="row">
+                    <div class="col m12 searchContainer hoverable">
+                        <table id=searchTable class="responsive-table highlight centered">
+                            <thead>
+                                <tr>
+                                    <th class=propertyData>Property <br> Name</th>
+                                    <th class=propertyData>Property <br> Details</th>
+                                    <th class=roomData>Room <br> Type</th>
+                                    <th class=roomData>Room <br> Description</th>
+                                    <th class=roomData>Room <br> Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id=tableBody>
 
                     <!-- DELETE ===========================-->
                     <!-- Will be created in browseRooms.js -->
@@ -191,21 +188,21 @@
                                             </td>
                                           </tr>
                                         //-->
-                                </tbody>
-                              </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </main>
     <!-- ======================================================================== -->
     <!-- FOOTER ///////////////////////////////////////////////////////////////// -->
     <!-- ======================================================================== -->
-    <footer class="page-footer">
+    <footer class="page-footer indigo lighten-4">
         <div class="footer-copyright">
-            <div class="container">
-                © 2017 Copyright | Heather Mathies | Eric Matson | Misael Rivera
+            <div class="container footerText">
+            © 2017 Copyright  |  Heather Mathies  |  Eric Matson  |  Misael Rivera
             </div>
         </div>
     </footer>
@@ -215,20 +212,22 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {        //initialize all modals           
+    $(document).ready(function () {          
         $('.modal').modal();
-
-        //now you can open modal from code
-        $('#modal1').modal('open');
-
-        //or by click on trigger
-        $('.trigger-modal').modal();
-     });
-    $(document).ready(function(){
-    $('.tooltipped').tooltip({delay: 50});
-  });
+        $('.modal-trigger').modal();
+        $("#welcomeLogo2").click(function() {
+            location.href = "/choice";
+        });
+        $('.tooltipped').tooltip({delay: 50});
+    });
     </script>
-    
+    <script type="text/javascript">
+        $("#details").click(function() {
+            location.href = "/choice";
+        });
+
+    </script>
+
     <script src="/public/assets/javascript/browseRooms.js"></script>
 </body>
 
