@@ -19,11 +19,12 @@ app.use('/public', express.static("public"));
 //there is an error
 // Routes
 // =============================================================
-//html routes
-require("./routes/html-routes.js")(app);
+
 //api routes
 require("./routes/hotel-api-routes.js")(app);
 require("./routes/room-api-routes.js")(app);
+//html routes
+require("./routes/html-routes.js")(app);
 
 //false makes sure it doesn't drop all of the tables
 //change it true only if there has been a change to the table

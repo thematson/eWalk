@@ -8,9 +8,7 @@ $(document).ready(function() {
   // =======================================================
   //IN PROGRESS -->  CHOOSE ZIP CODE
 function addZip () {
-  // $.get("/api/hotels/", function(data) {
-  //   console.log(data);
-  // });
+ 
   $.get("/api/hotels", function(data){
     console.log(data);
   });
@@ -50,10 +48,12 @@ function getRooms(ZipCode) {
   if (ZipCodeString) {
     ZipCodeString = "/ZipCode/" + ZipCodeString;
   }
+
   $.get("/api/Hotels" + ZipCodeString, function(data) {
     console.log("Rooms", data);
     rooms = data;
     if (!rooms || !rooms.length) {
+
       displayEmpty();
     }
     else {
