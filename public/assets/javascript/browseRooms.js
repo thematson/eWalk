@@ -1,7 +1,7 @@
 $(document).ready(function() {
  
   // searchTable holds all of our rooms
-  var searchTable = $(".tbody");
+  var searchTable = $("#tableBody");
   var roomZipCodeSelect = $("#zipSubmit");
   var rooms;
 
@@ -43,7 +43,7 @@ addZip();*/
 getRooms();
 
 // This function grabs rooms from the database and updates the view
-function getRooms(ZipCode) {
+function getRooms() {
   /*var ZipCodeString = ZipCode || "";
   if (ZipCodeString) {
     ZipCodeString = "/ZipCode/" + ZipCodeString;
@@ -53,7 +53,6 @@ function getRooms(ZipCode) {
     console.log("Rooms", data);
     rooms = data;
     if (!rooms || !rooms.length) {
-
       displayEmpty();
     }
     else {
@@ -76,7 +75,7 @@ function createNewRow(room) {
 
   //========TABLE START ==============================
   var newTableRow = $("<tr>");
-
+  searchTable.append(newTableRow);
   //========PROPERTY NAME ============================
     //APPEND TO ROW
     var NameCell = $("<td>");
