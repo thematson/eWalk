@@ -7,15 +7,15 @@ $(document).ready(function() {
 
   // =======================================================
   //IN PROGRESS -->  CHOOSE ZIP CODE
-function addZip () {
+/*function addZip () {
  
-  $.get("/api/hotels", function(data){
+  $.get("/api/rooms", function(data){
     console.log(data);
   });
   // console.log(req.user);
 }
 
-addZip();
+addZip();*/
 
   // =======================================================
   //IN PROGRESS -->  BOOKING ROOM
@@ -44,12 +44,12 @@ getRooms();
 
 // This function grabs rooms from the database and updates the view
 function getRooms(ZipCode) {
-  var ZipCodeString = ZipCode || "";
+  /*var ZipCodeString = ZipCode || "";
   if (ZipCodeString) {
     ZipCodeString = "/ZipCode/" + ZipCodeString;
-  }
+  }*/
 
-  $.get("/api/Hotels" + ZipCodeString, function(data) {
+  $.get("/api/rooms", function(data) {
     console.log("Rooms", data);
     rooms = data;
     if (!rooms || !rooms.length) {

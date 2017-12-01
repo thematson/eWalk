@@ -17,9 +17,17 @@ module.exports = function(app) {
 
   });
 
-  // Get all vacant hotels
-  app.get("/api/hotels", function(req, res) {
-    db.Hotel.findAll({}).then(function(dbHotel) {
+  // Get all vacant rooms in a zipcode
+  app.get("/api/hotels/:zipCode", function(req, res) {
+    db.Hotel.findAll({
+      where: {
+        zipCode: req.params.zipCode
+      },
+      include: [{
+        model: Room,
+        where: status===1
+      }]
+    }).then(function(dbHotel) {
       res.json(dbHotel);
     });
   });
