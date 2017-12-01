@@ -1,9 +1,9 @@
 $(document).ready(function() {
  
-  // searchTable holds all of our posts
+  // searchTable holds all of our rooms
   var searchTable = $(".tbody");
-  var postZipCodeSelect = $("#zipSubmit");
-  var posts;
+  var roomZipCodeSelect = $("#zipSubmit");
+  var rooms;
 
   // =======================================================
   //IN PROGRESS -->  CHOOSE ZIP CODE
@@ -25,33 +25,35 @@ addZip();
     var currentPost = $(this)
       .parent()
       .parent()
-      .data("post");
+      .data("room");
     bookingPost(currentPost.id);
   }
 
   function bookingPost(id) {
     $.ajax({
-      method: "DELETE",
-      url: "/api/posts/" + id
+      method: "GET",
+      url: "/api/rooms/" + id
     })
     .done(function() {
-      getPosts(postZipCodeSelect.val());
+      getPosts(roomZipCodeSelect.val());
     });
   };
 // =======================================================
   //IN PROGRESS -->  DISPLAY ROOMS
 getRooms();
 
-// This function grabs posts from the database and updates the view
+// This function grabs rooms from the database and updates the view
 function getRooms(ZipCode) {
   var ZipCodeString = ZipCode || "";
   if (ZipCodeString) {
     ZipCodeString = "/ZipCode/" + ZipCodeString;
   }
-  $.get("/api/rooms" + ZipCodeString, function(data) {
-    console.log("Posts", data);
-    posts = data;
-    if (!posts || !posts.length) {
+
+  $.get("/api/Hotels" + ZipCodeString, function(data) {
+    console.log("Rooms", data);
+    rooms = data;
+    if (!rooms || !rooms.length) {
+
       displayEmpty();
     }
     else {
@@ -62,15 +64,15 @@ function getRooms(ZipCode) {
 
 function initializeRows() {
   searchTable.empty();
-  var postsToAdd = [];
-  for (var i = 0; i < posts.length; i++) {
-    postsToAdd.push(createNewRow(posts[i]));
+  var roomsToAdd = [];
+  for (var i = 0; i < rooms.length; i++) {
+    roomsToAdd.push(createNewRow(rooms[i]));
   }
-  searchTable.append(postsToAdd);
+  searchTable.append(roomsToAdd);
 }
 
-// This function constructs a post's HTML
-function createNewRow(post) {
+// This function constructs a room's HTML
+function createNewRow(room) {
 
   //========TABLE START ==============================
   var newTableRow = $("<tr>");
@@ -81,7 +83,7 @@ function createNewRow(post) {
     newTableRow.append(NameCell);
       //APPEND TO CELL
       var NameSpan = $("<span id=propName>");
-      NameSpan.text(post.hotel_name);
+      NameSpan.text(room.hotel_name);
       NameCell.append(NameSpan);
   //========PROPERTY DETAILS MODAL START==============
     //APPEND TO ROW
@@ -103,7 +105,7 @@ function createNewRow(post) {
           DetailsDiv2.append(webLabel);
             //APPEND TO LABEL
 
-            var webLink = $("<a href=" + post.url + "style='cursor:pointer' target='_blank'>");
+            var webLink = $("<a href=" + room.url + "style='cursor:pointer' target='_blank'>");
             webLink.text("Visit Property Site");
             webLabel.append(webLink);
 
@@ -113,7 +115,7 @@ function createNewRow(post) {
           DetailsDiv2.append(addressLabel);
             //APPEND TO LABEL
             var addressSpan = $("<span id=address>");
-            addressSpan.text(post.address);
+            addressSpan.text(room.address);
             addressLabel.append(addressSpan);
           //APPEND TO DIV2
           var phoneLabel = $("<p class='details wordWrap'>");
@@ -121,7 +123,7 @@ function createNewRow(post) {
           DetailsDiv2.append(phoneLabel);
             //APPEND TO LABEL
             var phoneSpan = $("<span id=phone>");
-            phoneSpan.text(post.phone);
+            phoneSpan.text(room.phone);
             phoneLabel.append(phoneSpan);
 
   //========ROOM TYPE =================================
@@ -130,7 +132,7 @@ function createNewRow(post) {
     newTableRow.append(RoomTypeCell);
       //APPEND TO CELL
       var RoomTypeSpan = $("<span id=type>");
-      RoomTypeSpan.text(post.roomType);
+      RoomTypeSpan.text(room.roomType);
       RoomTypeCell.append(RoomTypeSpan);
 
   //========ROOM DESCRIPTION MODAL START==============
@@ -153,7 +155,7 @@ function createNewRow(post) {
           DescriptionDiv2.append(DescriptionLabel);
             //APPEND TO LABEL
             var DescriptionSpan = $("<span id='descr' class='wordWrap'>");
-            DescriptionSpan.text(post.aboutRoom);
+            DescriptionSpan.text(room.aboutRoom);
             DescriptionLabel.append(DescriptionSpan);
 
   //========ROOM TYPE =================================
@@ -162,7 +164,7 @@ function createNewRow(post) {
     newTableRow.append(PriceCell);
       //APPEND TO CELL
       var PriceSpan = $("<span id=price>");
-      PriceSpan.text(post.price);
+      PriceSpan.text(room.price);
       PriceCell.append(PriceSpan);
   
   //========BOOK ROOM MODAL START==============
@@ -188,64 +190,29 @@ function createNewRow(post) {
           ConfirmDiv2.append(ConfirmDiv3);
             //APPEND TO DIV3
             var YesButton = $(" <button class='modal-action btn waves-effect waves-light red lighten-2' type='submit' form='formId' id='yes' 'action'>");
+            YesButton.text("Yes");
+            ConfirmDiv3.append(YesButton);
               //APPEND TO BUTTON
               var YesIcon = $("<i class='material-icons'>");
+              YesButton.append(YesIcon);
             //APPEND TO DIV3
             var NoButton = $(" <button class='modal-action btn waves-effect waves-light indigo darken-3' type='submit' form='formId' id='no' 'action'>");
+            NoButton.text("No");
+            ConfirmDiv3.append(NoButton);
               //APPEND TO BUTTON
               var NoIcon = $("<i class='material-icons'>");
+              NoButton.append(NoIcon);
       
-    newTableRow.data("post", post);
+    newTableRow.data("room", room);
     return newTableRow;
-
-
-  
-  var newPostPanel = $("<div>");
-  newPostPanel.addClass("panel panel-default");
-  var newPostPanelHeading = $("<div>");
-  newPostPanelHeading.addClass("panel-heading");
-  var deleteBtn = $("<button>");
-  deleteBtn.text("x");
-  deleteBtn.addClass("delete btn btn-danger");
-  var editBtn = $("<button>");
-  editBtn.text("EDIT");
-  editBtn.addClass("edit btn btn-default");
-  var newPostTitle = $("<h2>");
-  var newPostDate = $("<small>");
-  var newPostZipCode = $("<h5>");
-  newPostZipCode.text(post.ZipCode);
-  newPostZipCode.css({
-    float: "right",
-    "font-weight": "700",
-    "margin-top":
-    "-15px"
-  });
-  var newPostPanelBody = $("<div>");
-  newPostPanelBody.addClass("panel-body");
-  var newPostBody = $("<p>");
-  newPostTitle.text(post.title + " ");
-  newPostBody.text(post.body);
-  var formattedDate = new Date(post.createdAt);
-  formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-  newPostDate.text(formattedDate);
-  newPostTitle.append(newPostDate);
-  newPostPanelHeading.append(deleteBtn);
-  newPostPanelHeading.append(editBtn);
-  newPostPanelHeading.append(newPostTitle);
-  newPostPanelHeading.append(newPostZipCode);
-  newPostPanelBody.append(newPostBody);
-  newPostPanel.append(newPostPanelHeading);
-  newPostPanel.append(newPostPanelBody);
-  newPostPanel.data("post", post);
-  return newPostPanel;
 }
 
-  // This function displays a messgae when there are no posts
+  // This function displays a messgae when there are no rooms
   function displayEmpty() {
     searchTable.empty();
     var messageh2 = $("<h2>");
     messageh2.css({ "text-align": "center", "margin-top": "50px" });
-    messageh2.html("No posts yet for this ZipCode, navigate <a href='/cms'>here</a> in order to create a new post.");
+    messageh2.html("No rooms yet for this ZipCode, navigate <a href='/cms'>here</a> in order to create a new room.");
     searchTable.append(messageh2);
   }
 

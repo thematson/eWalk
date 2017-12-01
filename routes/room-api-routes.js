@@ -2,7 +2,7 @@
 var db = require("../models");
 
 module.exports = function(app){
-//GET route for getting all of the posts
+//GET route for getting all of the rooms
 app.get("/api/rooms/", function(req, res) {
   db.Room.findAll({})
   .then(function(dbRoom) {
@@ -10,8 +10,8 @@ app.get("/api/rooms/", function(req, res) {
   });
 });
 
-// Get route for returning posts of a specific status
-  app.get("/api/posts/status/:status", function(req, res) {
+// Get route for returning rooms of a specific status
+  app.get("/api/rooms/status/:status", function(req, res) {
     db.Room.findAll({
       where: {
         status: req.params.status
@@ -24,7 +24,7 @@ app.get("/api/rooms/", function(req, res) {
 
 // Add a Room
 app.post("/api/rooms", function(req, res) {
-  console.log("Api-post: " + req.body);
+  console.log("Api-room: " + req.body);
   db.Room.create({
       room_id: req.body.room_id,
       property_id: req.body.property_id,
@@ -42,7 +42,7 @@ app.post("/api/rooms", function(req, res) {
     });
 });
 
-app.put("/api/posts", function(req, res) {
+app.put("/api/rooms", function(req, res) {
   db.Room.update(
     req.body,
     {
