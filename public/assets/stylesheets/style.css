@@ -18,8 +18,9 @@ main {
 #welcomeLogo2 {
   font-family: 'Oswald', sans-serif;
   font-size:20px;
-  color: white;
+  color: #283593;
   margin:0px;  
+  cursor: pointer;
 }
 
 .brick{
@@ -343,6 +344,7 @@ blockquote {
 
   #searchLogo, #postLogo {
     font-size: 80px;
+    text-align: center;
   }
 
 }
