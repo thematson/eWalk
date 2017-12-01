@@ -1,5 +1,5 @@
 // *********************************************************************************
-// hotel.js - this file offers a set of routes for displaying and saving data to the db
+// this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
 
 // Dependencies
@@ -14,7 +14,13 @@ module.exports = function(app) {
   //log in
   app.post("/api/hotels/login", passport.authenticate("local"), function(req, res){
     res.send("/choice");
+  });
 
+  //log Out
+  app.get('/api/hotels/login',
+    function(req, res){
+      req.logout();
+      res.send('/');
   });
 
   // Get all vacant rooms in a zipcode
@@ -35,7 +41,6 @@ module.exports = function(app) {
   // Register/Add a hotel
   app.post("/api/hotels/register", function(req, res) {
 
-    console.log(req.body);
     db.Hotel.create({
       hotel_name: req.body.hotel_name,
       property_id: req.body.property_id,

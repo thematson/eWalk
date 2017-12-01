@@ -24,12 +24,11 @@ app.get("/api/rooms/", function(req, res) {
     .then(function(dbPost) {
       res.json(dbPost);
     });
-    
+
   });
 
 // Add a Room
 app.post("/api/rooms", function(req, res) {
-  console.log("Api-room: " + req.body);
   db.Room.create({
       room_id: req.body.room_id,
       property_id: req.body.property_id,

@@ -5,6 +5,11 @@ var app = express();
 var passport = require("./config/passport");
 var PORT = process.env.PORT || 3000;
 
+// Static directory
+app.use('/public', express.static("public"));
+//this guarantees our server won't start before our database is ready or if
+//there is an error
+
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -13,10 +18,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Static directory
-app.use('/public', express.static("public"));
-//this guarantees our server won't start before our database is ready or if
-//there is an error
+
 // Routes
 // =============================================================
 

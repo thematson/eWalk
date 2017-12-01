@@ -14,9 +14,7 @@ function(id, password, done){
       userName: id
     }
   }).then(function(dbHotel){
-    //If no user with given email
-    console.log("console log in passport");
-    console.log(dbHotel);
+    //If no user with given userName
     if(!dbHotel || !dbHotel.validPassword(password)){
 
       return done(null, false, {
