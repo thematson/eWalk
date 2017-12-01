@@ -8,9 +8,7 @@ $(document).ready(function() {
   // =======================================================
   //IN PROGRESS -->  CHOOSE ZIP CODE
 function addZip () {
-  // $.get("/api/hotels/", function(data) {
-  //   console.log(data);
-  // });
+ 
   $.get("/api/hotels", function(data){
     console.log(data);
   });
@@ -50,7 +48,7 @@ function getRooms(ZipCode) {
   if (ZipCodeString) {
     ZipCodeString = "/ZipCode/" + ZipCodeString;
   }
-  $.get("/api/posts" + ZipCodeString, function(data) {
+  $.get("/api/rooms" + ZipCodeString, function(data) {
     console.log("Posts", data);
     posts = data;
     if (!posts || !posts.length) {
@@ -172,7 +170,7 @@ function createNewRow(post) {
     var BookCell = $("<td>");
     newTableRow.append(BookCell);
       //APPEND TO CELL
-      var ConfirmButton = $("<a id='bookRoom' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#modalConfirm'>");
+      var ConfirmModalButton = $("<a id='bookRoom' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#modalConfirm'>");
       ConfirmModalButton.text("Book");
       BookCell.append(ConfirmModalButton);
       //APPEND TO CELL
