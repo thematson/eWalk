@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    console.log("this on pistRooms " + this.URL);
+    var parts = this.URL.split("/");
+    var lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
+
             $("select").material_select();
 
             $(".datepicker").pickadate({
@@ -30,7 +34,7 @@ $(document).ready(function() {
                     closeDate: checkoutDateInput.val()
                 };
                 var isRoomData = true;
-                for (i in roomData) {
+                for (var i in roomData) {
                     if (roomData[i] == null) {
                         isRoomData = false;
                     }
@@ -50,7 +54,7 @@ $(document).ready(function() {
             });
 
             function postNewRoom(roomData) {
-                $.post("/api/rooms", roomData).then(function(data) {
+                $.post("/api/rooms/" + lastSegment, roomData).then(function(data) {
                     window.location.replace(data);
                 }).catch(handlePostRoomErr);
             }

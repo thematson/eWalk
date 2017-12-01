@@ -9,7 +9,7 @@ $(document).ready(function() {
   //IN PROGRESS -->  CHOOSE ZIP CODE
 function addZip () {
  
-  $.get("/api/hotels", function(data){
+  $.get("/api/rooms", function(data){
     console.log(data);
   });
   // console.log(req.user);
@@ -45,11 +45,11 @@ getRooms();
 // This function grabs rooms from the database and updates the view
 function getRooms(ZipCode) {
   var ZipCodeString = ZipCode || "";
-  if (ZipCodeString) {
-    ZipCodeString = "/ZipCode/" + ZipCodeString;
-  }
+  // if (ZipCodeString) {
+  //   ZipCodeString = "/ZipCode/" + ZipCodeString;
+  // }
 
-  $.get("/api/Hotels" + ZipCodeString, function(data) {
+  $.get("/api/rooms" + ZipCodeString, function(data) {
     console.log("Rooms", data);
     rooms = data;
     if (!rooms || !rooms.length) {

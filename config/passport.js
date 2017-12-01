@@ -1,8 +1,8 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 var db = require("../models");
-
 passport.use(new LocalStrategy(
+  
 //Our user will log in using an email addressInput
 {
   usernameField: "userName"
@@ -16,7 +16,7 @@ function(id, password, done){
   }).then(function(dbHotel){
     //If no user with given email
     console.log("console log in passport");
-    console.log(dbHotel);
+    console.log(dbHotel.id);
     if(!dbHotel || !dbHotel.validPassword(password)){
 
       return done(null, false, {

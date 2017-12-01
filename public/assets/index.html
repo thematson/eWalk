@@ -73,7 +73,8 @@
 <!-- REGISTRATION MODAL ///////////////////////////////////////////////////// -->
 <!-- ======================================================================== -->
 
-          <a id="register" class="waves-effect waves-light btn modal-trigger red lighten-2 btn-large" href="#modal2">Register</a>
+          <a id="register" class="waves-effect waves-light btn modal-trigger red lighten-2 btn-large" onclick="play()" href="#modal2">Register</a>
+          <audio id="audio" src="public/assets/images/Lightsaber Turn On-SoundBible.com-1637663395.mp3"></audio>
           <div id="modal2" class="modal">
             <div class="modal-content">
               <h4>Join the eWalk village</h4>
@@ -156,6 +157,7 @@
               <button class="modal-action btn waves-effect waves-light red lighten-2" id="submit-Register" type="submit" form="formId" name="action">Submit
                 <i class="material-icons right">send</i>
               </button>
+              
             </div>
           </div>
         </div>
@@ -197,6 +199,10 @@
 			<script src="/public/assets/javascript/main.js"></script>
 			<script>
       var placeSearch, autocomplete;
+      function play() {
+          var audio = document.getElementById("audio");
+          audio.play();
+        }
 
         function initAutocomplete() {
           console.log('function autocom clled');

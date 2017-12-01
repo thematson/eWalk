@@ -32,10 +32,10 @@ $(document).ready(function() {
   }
 
   function proceed() {
-    window.location.replace("/choice");
+    window.location.replace("/choice/" + hotel.Id);
 
   }
 
-
+ 
 
 });
