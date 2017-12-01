@@ -1,5 +1,7 @@
 // Requiring our models
 var db = require("../models");
+var passport = require("passport");
+
 
 module.exports = function(app){
 //GET route for getting all of the rooms
@@ -12,6 +14,7 @@ app.get("/api/rooms/", function(req, res) {
 
 // Get route for returning rooms of a specific status
   app.get("/api/rooms", function(req, res) {
+    console.log(passport);
     db.Room.findAll({
       where: status === 1,
       include: [{
@@ -21,6 +24,7 @@ app.get("/api/rooms/", function(req, res) {
     .then(function(dbPost) {
       res.json(dbPost);
     });
+    
   });
 
 // Add a Room
