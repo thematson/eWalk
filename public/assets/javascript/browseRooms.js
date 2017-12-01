@@ -1,21 +1,21 @@
 $(document).ready(function() {
  
   // searchTable holds all of our rooms
-  var searchTable = $(".tbody");
+  var searchTable = $("#tableBody");
   var roomZipCodeSelect = $("#zipSubmit");
   var rooms;
 
   // =======================================================
   //IN PROGRESS -->  CHOOSE ZIP CODE
-function addZip () {
+/*function addZip () {
  
-  $.get("/api/hotels", function(data){
+  $.get("/api/rooms", function(data){
     console.log(data);
   });
   // console.log(req.user);
 }
 
-addZip();
+addZip();*/
 
   // =======================================================
   //IN PROGRESS -->  BOOKING ROOM
@@ -43,17 +43,16 @@ addZip();
 getRooms();
 
 // This function grabs rooms from the database and updates the view
-function getRooms(ZipCode) {
-  var ZipCodeString = ZipCode || "";
+function getRooms() {
+  /*var ZipCodeString = ZipCode || "";
   if (ZipCodeString) {
     ZipCodeString = "/ZipCode/" + ZipCodeString;
-  }
+  }*/
 
-  $.get("/api/Hotels" + ZipCodeString, function(data) {
+  $.get("/api/rooms", function(data) {
     console.log("Rooms", data);
     rooms = data;
     if (!rooms || !rooms.length) {
-
       displayEmpty();
     }
     else {
@@ -76,7 +75,7 @@ function createNewRow(room) {
 
   //========TABLE START ==============================
   var newTableRow = $("<tr>");
-
+  searchTable.append(newTableRow);
   //========PROPERTY NAME ============================
     //APPEND TO ROW
     var NameCell = $("<td>");

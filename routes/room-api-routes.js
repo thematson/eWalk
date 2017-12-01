@@ -11,11 +11,12 @@ app.get("/api/rooms/", function(req, res) {
 });
 
 // Get route for returning rooms of a specific status
-  app.get("/api/rooms/status/:status", function(req, res) {
+  app.get("/api/rooms", function(req, res) {
     db.Room.findAll({
-      where: {
-        status: req.params.status
-      }
+      where: status === 1,
+      include: [{
+        model: Hotel,
+      }]
     })
     .then(function(dbPost) {
       res.json(dbPost);
