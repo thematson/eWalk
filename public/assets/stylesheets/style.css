@@ -42,7 +42,7 @@ main {
 
 #postLogo {
   font-family: 'Oswald', sans-serif;
-  font-size: 160px;
+  font-size: 120px;
   color: #283593;
   margin: 0px;
   cursor: pointer;
@@ -54,7 +54,7 @@ Label::after {
 
 #searchLogo {
   font-family: 'Oswald', sans-serif;
-  font-size: 160px;
+  font-size: 120px;
   color: white;
   margin: 0px;
   cursor: pointer;
@@ -122,20 +122,24 @@ td, th {
 
 .input-field input[type=text]:focus + label  {
   color:#c5cae9 !important;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #c5cae9 !important;
   box-shadow: 0 1px 0 0 rgba(223,105,110,0) !important;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .input-field input[type=password]:focus + label  {
   color:#c5cae9 !important;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .input-field input[type=password]:focus {
   border-bottom: 1px solid #c5cae9 !important;
   box-shadow: 0 1px 0 0 rgba(223,105,110,0) !important;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .pac-container {
@@ -144,6 +148,11 @@ td, th {
 
 .headerRow {
   height:350px;
+  margin:0px!important;
+  padding:70px 0px !important;
+}
+.headerRow2{
+
   margin:0px!important;
   padding:70px 0px !important;
 }
@@ -178,8 +187,9 @@ td, th {
   padding-top:0px !important;;
 }
 
-.paraMargin {
+.modalPara {
   margin-bottom:0px !important;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #submit-Register, #submit-Login {
@@ -274,6 +284,10 @@ blockquote {
     height:280px;
   }
 
+  #searchLogo, #postLogo {
+    font-size: 100px;
+  }
+
 }
 
 @media only screen and (max-width: 700px)
@@ -325,6 +339,10 @@ blockquote {
     height:140px;
     padding:40px 10.5px !important;
     width:100%
+  }
+
+  #searchLogo, #postLogo {
+    font-size: 80px;
   }
 
 }
