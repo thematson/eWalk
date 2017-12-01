@@ -1,5 +1,6 @@
 <h1>eWalk.io</h1>
 <h4>Be a Jedi! When you've overbooked your hotel, find a room faster and more efficiently with eWalk!</h4>
+<h2>eWalk.io can be found on Heroku at https://fast-wildwood-25635.herokuapp.com/</h2>
 
 ![Screenshot](public/assets/images/ewok.jpeg)
 <p>Credit: This is a clipart image and can be found at: </p> http://weclipart.com/gimg/A425F14D40565938/il_340x270.558688970_2sb2.jpg
