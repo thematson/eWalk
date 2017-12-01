@@ -89,9 +89,10 @@ function createNewRow(room) {
     var DetailsCell = $("<td>");
     newTableRow.append(DetailsCell);
       //APPEND TO CELL
-      var DetailsModalButton = $("<a id='viewProperty' class='waves-effect waves-light btn modal-trigger red lighten-2' href='#details'>");
+      var DetailsModalButton = $("<a id='viewProperty' class='waves-effect waves-light btn modal-trigger red lighten-2' data-target=#details>");
       DetailsModalButton.text("View");
       DetailsCell.append(DetailsModalButton);
+      
       //APPEND TO CELL
       var DetailsDiv1 = $("<div id='details' class='modal wordWrap'>");
       DetailsCell.append(DetailsDiv1);
@@ -107,6 +108,7 @@ function createNewRow(room) {
             var webLink = $("<a href=" + room.url + "style='cursor:pointer' target='_blank'>");
             webLink.text("Visit Property Site");
             webLabel.append(webLink);
+            console.log("clicked");
 
           //APPEND TO DIV2
           var addressLabel = $("<p class='details wordWrap'>");
@@ -124,6 +126,7 @@ function createNewRow(room) {
             var phoneSpan = $("<span id=phone>");
             phoneSpan.text(room.phone);
             phoneLabel.append(phoneSpan);
+            
 
   //========ROOM TYPE =================================
     //APPEND TO ROW
