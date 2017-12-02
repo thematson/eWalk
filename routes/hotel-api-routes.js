@@ -10,11 +10,18 @@ var passport = require("../config/passport");
 // Routes
 // =============================================================
 module.exports = function(app) {
+  
 
   //log in
-  app.post("/api/hotels/login", passport.authenticate("local"), function(req, res){
-    res.send("/choice");
-  });
+
+  app.post("/api/hotels/login/:userName", passport.authenticate("local"), function(req, res){
+    console.log("hi");
+    var parts = req.url.split("/");
+    var lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
+
+    console.log(lastSegment);
+    res.send("/choice/" + lastSegment);
+
 
   //log Out
   app.get('/api/hotels/login',
@@ -41,7 +48,12 @@ module.exports = function(app) {
   // Register/Add a hotel
   app.post("/api/hotels/register", function(req, res) {
 
-    db.Hotel.create({
+
+    console.log(req.body);
+    db.Hotel.create(
+      {
+
+
       hotel_name: req.body.hotel_name,
       property_id: req.body.property_id,
       userName: req.body.userName,
@@ -54,8 +66,11 @@ module.exports = function(app) {
       routingNumber: req.body.routingNumber,
       balance: req.body.balance,
       api_id: req.body.api_id
-    }).then(function(){
-      res.redirect(307, "/api/hotels/login");
+    }
+    
+  ).then(function(){
+     var logIn = req.body.userName;
+      res.redirect(307, "/api/hotels/login/" + logIn);
     }).catch(function(err){
       console.log(err);
       res.json(err);

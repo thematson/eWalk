@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+    
+    var parts = this.URL.split("/");
+    var lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
+
+
             $("select").material_select();
 
             $(".datepicker").pickadate({
@@ -19,19 +24,18 @@ $(document).ready(function() {
 
 
             $("#submit-Room").click(function(e) {
-                console.log("Submit Room button was clicked!");
-                console.log("checkoutDateInput: " + checkoutDateInput.val());
+               
                 e.preventDefault();
 
                 var roomData = {
                     roomType: roomTypeInput.val(),
                     price: roomPriceInput.val().trim(),
                     aboutRoom: aboutRoomInput.val().trim(),
-                    status: roomStatusInput.val().trim(),
+                    status: 1,
                     closeDate: checkoutDateInput.val()
                 };
                 var isRoomData = true;
-                for (i in roomData) {
+                for (var i in roomData) {
                     if (roomData[i] == null) {
                         isRoomData = false;
                     }
@@ -51,7 +55,7 @@ $(document).ready(function() {
             });
 
             function postNewRoom(roomData) {
-                $.post("/api/rooms", roomData).then(function(data) {
+                $.post("/api/rooms/" + lastSegment, roomData).then(function(data) {
                     window.location.replace(data);
                 }).catch(handlePostRoomErr);
             }

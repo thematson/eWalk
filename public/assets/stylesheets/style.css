@@ -10,13 +10,14 @@ main {
 
 #welcomeLogo {
   font-family: 'Oswald', sans-serif;
-  font-size:160px;
+  font-size: 160px;
   color: white;
-  margin:0px;
+  margin: 0px;
 }
 
 #welcomeLogo2 {
   font-family: 'Oswald', sans-serif;
+
   font-size:20px;
   color: #283593;
   margin:0px;  
@@ -29,16 +30,19 @@ main {
 
 .brick2{
   background-color:#c5cae9;
+
   padding: 10px 0;
 }
 
 #welcome {
+
   margin:0px !important;
   padding: 10px 0px;
   color:#283593;
   font-family: 'Montserrat', sans-serif;
   font-size:16px;
   font-weight:bold;
+
 }
 
 #postLogo {
@@ -50,7 +54,9 @@ main {
 }
 
 Label::after {
+
   color:#c5cae9;
+
 }
 
 #searchLogo {
@@ -70,11 +76,11 @@ Label::after {
 
 .searchContainer {
   background-color: white;
-  padding-right:60px !important;
+  padding-right: 60px !important;
 }
 
 #searchTable {
-  margin:40px;
+  margin: 40px;
 }
 
 .propertyData {
@@ -82,18 +88,22 @@ Label::after {
 }
 
 .property-details {
-  padding:40px;
+  padding: 40px;
 }
 
 .details {
   font-weight: bold;
 }
 
-#descr, .room-details, #room  {
+#descr,
+.room-details,
+#room {
   word-wrap: break-word !important;
 }
 
-#address, #phone, #descr {
+#address,
+#phone,
+#descr {
   font-weight: normal;
 }
 
@@ -101,16 +111,17 @@ Label::after {
   color: #283593;
 }
 
-td, th {
-  min-width:100px !important;
-  max-width:150px !important;
-  min-height:75px !important;
+td,
+th {
+  min-width: 100px !important;
+  max-width: 150px !important;
+  min-height: 75px !important;
   word-wrap: break-word !important;
-  font-size:12px;
+  font-size: 12px;
 }
 
 .bottomPadding {
-  padding-bottom:280px !important;
+  padding-bottom: 280px !important;
 }
 
 .noLeftPadding {
@@ -118,28 +129,34 @@ td, th {
 }
 
 #zip_code {
-  color:white;
+  color: white;
 }
+
 
 .input-field input[type=text]:focus + label  {
   color:#c5cae9 !important;
+
   font-family: 'Montserrat', sans-serif;
 }
 
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #c5cae9 !important;
+
   box-shadow: 0 1px 0 0 rgba(223,105,110,0) !important;
   font-family: 'Montserrat', sans-serif;
 }
 
 .input-field input[type=password]:focus + label  {
   color:#c5cae9 !important;
+
   font-family: 'Montserrat', sans-serif;
 }
 
 .input-field input[type=password]:focus {
   border-bottom: 1px solid #c5cae9 !important;
+
   box-shadow: 0 1px 0 0 rgba(223,105,110,0) !important;
+
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -148,9 +165,14 @@ td, th {
 }
 
 .headerRow {
-  height:350px;
-  margin:0px!important;
-  padding:70px 0px !important;
+  height: 350px;
+  margin: 0px!important;
+  padding: 70px 0px !important;
+}
+
+.headerRow2 {
+  margin: 0px!important;
+  padding: 70px 0px !important;
 }
 .headerRow2{
 
@@ -159,21 +181,28 @@ td, th {
 }
 
 .right {
-  padding-left:50px !important;
+  padding-left: 50px !important;
 }
+
+
 /*postRoom submit button*/
+
 #submit-Room {
   background-color: #283593 !important;
 }
+
 #login, #register  {
+
   margin: 70px 0px;
-  padding:10px;
+  padding: 10px;
   font-family: 'Montserrat', sans-serif;
+
   font-weight:bolder;
   font-size:25px;
   width:220px;
   height:75px;
   color:#283593;
+
 }
 
 #modalHeader {
@@ -184,8 +213,10 @@ td, th {
 }
 
 .modalPadding {
+
   padding-bottom:0px !important;
   padding-top:0px !important;;
+
 }
 
 .modalPara {
@@ -213,134 +244,121 @@ td, th {
 
 blockquote {
   font-family: 'Montserrat', sans-serif;
-  font-size:20px;
+  font-size: 20px;
   margin: 40px 0px !important;
   padding-left: 1.5rem;
+
   border-left: 5px solid #c5cae9; /* Just change the color value and that's it*/
+
 }
 
-@media only screen and (max-width: 1400px)
-{
+@media only screen and (max-width: 1400px) {
   .right {
-    padding:80px 0px !important;
-    padding-left:100px !important;
+    padding: 80px 0px !important;
+    padding-left: 100px !important;
   }
-
-  #yes, #no {
-    padding-bottom:20px !important;
+  #yes,
+  #no {
+    padding-bottom: 20px !important;
   }
-
   .wordWrap {
     word-wrap: break-word;
   }
-
   .confirmContent {
-    padding:40px !important;
+    padding: 40px !important;
   }
-
-  #login, #register {
+  #login,
+  #register {
     margin: 10px 0px;
   }
-
   #welcomeLogo {
-    font-size:160px;
+    font-size: 160px;
   }
-
 }
 
-@media only screen and (max-width: 1200px)
-{
+@media only screen and (max-width: 1200px) {
   .right {
-    padding-left:200px !important;
+    padding-left: 200px !important;
   }
-
 }
 
-@media only screen and (max-width: 1000px)
-{
+@media only screen and (max-width: 1000px) {
   .right {
-    padding-left:180px !important;
+    padding-left: 180px !important;
   }
-
 }
 
-
-
-@media only screen and (max-width: 850px)
-{
+@media only screen and (max-width: 850px) {
   .right {
-    padding:40px 0px !important;
-    padding-left:100px !important;
+    padding: 40px 0px !important;
+    padding-left: 100px !important;
   }
-
-  #login, #register {
+  #login,
+  #register {
     margin: 10px 0px;
   }
-
   #welcomeLogo {
-    font-size:120px;
+    font-size: 120px;
   }
-
   .headerRow {
-    height:280px;
+    height: 280px;
   }
+  #searchLogo,
+  #postLogo {
+    font-size: 100px;
+  }
+
 
   #searchLogo, #postLogo {
     font-size: 100px;
   }
 
+
 }
 
-@media only screen and (max-width: 700px)
-{
+@media only screen and (max-width: 700px) {
   .right {
-    padding:60px 0px !important;
-    padding-left:120px !important;
+    padding: 60px 0px !important;
+    padding-left: 120px !important;
   }
-
-  #login, #register {
+  #login,
+  #register {
     margin: 10px 0px;
-    padding:5px;
+    padding: 5px;
     font-family: 'Montserrat', sans-serif;
-    font-weight:bolder;
-    font-size:15px;
-    width:120px;
-    height:60px;
+    font-weight: bolder;
+    font-size: 15px;
+    width: 120px;
+    height: 60px;
   }
-
   #welcomeLogo {
-    font-size:120px;
+    font-size: 120px;
   }
-
   .headerRow {
-    height:280px;
+    height: 280px;
   }
-
 }
 
-@media only screen and (max-width: 600px)
-{
+@media only screen and (max-width: 600px) {
   #welcomeLogo {
-    font-size:100px;
+    font-size: 100px;
   }
-
   .right {
-    padding:60px 0px !important;
+    padding: 60px 0px !important;
   }
-
-  #login, #register {
+  #login,
+  #register {
     margin-right: 20px;
   }
-
   #welcomeLogo {
-    font-size:120px;
+    font-size: 120px;
+  }
+  .headerRow {
+    height: 140px;
+    padding: 40px 10.5px !important;
+    width: 100%
   }
 
-  .headerRow {
-    height:140px;
-    padding:40px 10.5px !important;
-    width:100%
-  }
 
   #searchLogo, #postLogo {
     font-size: 80px;
@@ -348,3 +366,4 @@ blockquote {
   }
 
 }
+

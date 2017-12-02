@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [5]
+        len: [1]
       }
     },
     phone: {
@@ -71,13 +71,15 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
+    Hotel.prototype.validPassword = function(password) {
+      return password == this.password;
+    };
+
   Hotel.associate = function(models){
     Hotel.hasMany(models.Room, {
       onDelete: "cascade"
     });
   };
-  Hotel.prototype.validPassword = function(password) {
-  return password == this.password;
-};
+
   return Hotel;
 };
