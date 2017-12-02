@@ -19,23 +19,23 @@ addZip();*/
 
   // =======================================================
   //IN PROGRESS -->  BOOKING ROOM
-  $(document).on("click", "#yes", bookRoom);
+  $(document).on("click", "#bookButton", bookRoom);
 
   function bookRoom() {
-    var currentPost = $(this)
+    var currentRoom = $(this)
       .parent()
       .parent()
       .data("room");
-    bookingPost(currentPost.id);
+    bookingPost(currentRoom.id);
   }
 
   function bookingPost(id) {
     $.ajax({
-      method: "GET",
+      method: "POST",
       url: "/api/rooms/" + id
     })
     .done(function() {
-      getPosts(roomZipCodeSelect.val());
+      getRooms();
     });
   };
 // =======================================================
@@ -86,10 +86,10 @@ function createNewRow(room) {
         NameCell.append(NameSpan);
     //========PROPERTY DETAILS MODAL START==============
       //APPEND TO ROW
-      var DetailsCell = $("<td>");
+      /*var DetailsCell = $("<td>");
       newTableRow.append(DetailsCell);
         //APPEND TO CELL
-        var DetailsModalButton = $("<button id=viewProperty" + [i] + " " + "class='waves-effect waves-light btn modal-trigger red lighten-2' data-target=#details" + [i] + ">");
+        var DetailsModalButton = $("<button id=viewProperty" + [i] + " " + "class='waves-effect waves-light btn modal-trigger indigo lighten-4' data-target=#details" + [i] + ">");
         DetailsModalButton.text("View");
         DetailsCell.append(DetailsModalButton);
         //APPEND TO CELL
@@ -124,7 +124,7 @@ function createNewRow(room) {
               //APPEND TO LABEL
               var phoneSpan = $("<span id=phone" + [i] + ">");
               phoneSpan.text(room.phone);
-              phoneLabel.append(phoneSpan);
+              phoneLabel.append(phoneSpan);*/
               
   
     //========ROOM TYPE =================================
@@ -141,7 +141,7 @@ function createNewRow(room) {
       var DescriptionCell = $("<td>");
       newTableRow.append(DescriptionCell);
         //APPEND TO CELL
-        var DescriptionModalButton = $("<a id=roomModal" + [i] + " " + "class='waves-effect waves-light btn modal-trigger red lighten-2' href=#room" + [i] + ">");
+        var DescriptionModalButton = $("<a id=roomModal" + [i] + " " + "class='waves-effect waves-light btn modal-trigger indigo lighten-4' href=#room" + [i] + ">");
         DescriptionModalButton.text("View");
         DescriptionCell.append(DescriptionModalButton);
         //APPEND TO CELL
@@ -167,17 +167,28 @@ function createNewRow(room) {
         var PriceSpan = $("<span id=price" + [i] + ">");
         PriceSpan.text(room.price);
         PriceCell.append(PriceSpan);
+
+    //========PHONE NUMBER ==============================
+      //APPEND TO ROW
+      var phoneCell = $("<td>");
+      newTableRow.append(phoneCell);
+
+          //APPEND TO LABEL
+          var phoneSpan = $("<span id=phone" + [i] + ">");
+          phoneSpan.text(room.Hotel);
+          console.log(room.Hotel);
+          phoneCell.append(phoneSpan);
     
     //========BOOK ROOM MODAL START==============
       //APPEND TO ROW
       var BookCell = $("<td>");
       newTableRow.append(BookCell);
         //APPEND TO CELL
-        var ConfirmModalButton = $("<a id=bookRoom" + [i] + " " + "class='waves-effect waves-light btn modal-trigger red lighten-2' href='#modalConfirm'>");
+        var ConfirmModalButton = $("<a id=bookRoom" + [i] + " " + "class='bookButton waves-effect waves-light btn modal-trigger indigo lighten-4'>");
         ConfirmModalButton.text("Book");
         BookCell.append(ConfirmModalButton);
         //APPEND TO CELL
-        var ConfirmDiv1 = $("<div id=modalConfirm" + [i] + " " + "class='modal wordWrap'>");
+        /*var ConfirmDiv1 = $("<div id=modalConfirm" + [i] + " " + "class='modal wordWrap'>");
         BookCell.append(ConfirmDiv1);
           //APPEND TO DIV1
           var ConfirmDiv2 = $("<div class='modal-content confirmContent wordWrap'>");
@@ -190,7 +201,7 @@ function createNewRow(room) {
             var ConfirmDiv3 = $("<div class='modal-footer'>");
             ConfirmDiv2.append(ConfirmDiv3);
               //APPEND TO DIV3
-              var YesButton = $(" <button class='modal-action btn waves-effect waves-light red lighten-2' type='submit' form='formId' id='yes' 'action'>");
+              var YesButton = $(" <button class='modal-action btn waves-effect waves-light indigo lighten-4' type='submit' form='formId' id='yes' 'action'>");
               YesButton.text("Yes");
               ConfirmDiv3.append(YesButton);
                 //APPEND TO BUTTON
@@ -202,23 +213,19 @@ function createNewRow(room) {
               ConfirmDiv3.append(NoButton);
                 //APPEND TO BUTTON
                 var NoIcon = $("<i class='material-icons'>");
-                NoButton.append(NoIcon);
+                NoButton.append(NoIcon);*/
         
       newTableRow.data("room", room);
       return newTableRow;
   }
-
-
 }
-
-
 
   // This function displays a messgae when there are no rooms
   function displayEmpty() {
     searchTable.empty();
     var messageh2 = $("<h2>");
     messageh2.css({ "text-align": "center", "margin-top": "50px" });
-    messageh2.html("No rooms yet for this ZipCode, navigate <a href='/cms'>here</a> in order to create a new room.");
+    messageh2.html("No rooms yet for this ZipCode, navigate <a href='/postRooms'>here</a> in order to create a new room.");
     searchTable.append(messageh2);
   }
 
