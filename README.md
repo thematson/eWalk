@@ -9,7 +9,7 @@
 <p>Node.js, jQuery, MySQL, Sequelize, Passport.js, Materialize</p>
 
 <h3>Node.js</h3>
-<p>Grok intuitive ship it human-centered design cortado latte disrupt iterate. Ship it venture capital piverate SpaceTeam driven long shadow actionable insight agile Steve Jobs. Engaging unicorn iterate affordances cortado responsive pitch deck engaging bootstrapping intuitive. Thought leader innovate paradigm ideate thinker-maker-doer affordances Steve Jobs bootstrapping integrate.</p>
+<p>We used the following npm packages: Express, Body-parser, mysql2, Passport, Passport-local, Sequelize</p>
 <hr>
 
 <h3>jQuery.js</h3>
