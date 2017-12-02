@@ -1,5 +1,7 @@
 // Requiring our models
 var db = require("../models");
+var passport = require("passport");
+
 
 module.exports = function(app){
 //GET route for getting all of the rooms
@@ -13,18 +15,22 @@ app.get("/api/rooms/", function(req, res) {
 });
 
 // Get route for returning rooms of a specific status
-  app.get("/api/rooms/status/:status", function(req, res) {
+  app.get("/api/rooms", function(req, res) {
+    
     db.Room.findAll({
-      where: {
-        status: req.params.status
-      }
+      where: status === 1,
+      include: [{
+        model: Hotel,
+      }]
     })
     .then(function(dbPost) {
       res.json(dbPost);
     });
+
   });
 
 // Add a Room
+
 app.post("/api/rooms/*", function(req, res) {
    var thisId;
    var parts = req.url.split("/");
@@ -78,6 +84,7 @@ function createRoom(){
   //     console.log(err);
   //     res.json(err);
   //   });
+
 });
   // DELETE route for deleting rooms
   app.delete("/api/rooms/:id", function(req, res) {

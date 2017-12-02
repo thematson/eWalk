@@ -1,7 +1,9 @@
 $(document).ready(function() {
+
     
     var parts = this.URL.split("/");
     var lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
+
 
             $("select").material_select();
 

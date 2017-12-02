@@ -28,7 +28,7 @@ $(function() {
         userNameInput.val("");
         passwordInput.val("");
     });
-
+    //need to create an onclick event for log out
 
     //loginHotel function does a post to our "/api/hotels/login" route and if successful, redirects us to the choice page
     function loginHotel(hotelLogin) {
@@ -43,6 +43,14 @@ $(function() {
             // alert("Login incorrect.");
         });
     };
+    //logoutHotel does a post to "" route and redirects to home page.
+    function logoutHotel(hotelLogin){
+      $.get("/api/hotel/login", hotelLogin).then(function(){
+        window.location.replace("*");
+      }).catch(function(err){
+        console.log(err);
+      })
+    }
 });
 
 //form validation

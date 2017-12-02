@@ -6,7 +6,9 @@ $(document).ready(function() {
 
   // =======================================================
   //IN PROGRESS -->  CHOOSE ZIP CODE
+
   /*function addZip () {
+
  
   $.get("/api/rooms", function(data){
     console.log(data);
@@ -18,25 +20,32 @@ addZip();*/
 
   // =======================================================
   //IN PROGRESS -->  BOOKING ROOM
+
   $(document).on("click", ".bookButton", bookRoom);
+
 
   function bookRoom() {
     var currentRoom = $(this)
       .parent()
       .parent()
       .data("room");
+
     bookingRoom(currentRoom.id);
+
   }
 
   function bookingRoom(id) {
     $.ajax({
+
       method: "DELETE",
       url: "/api/rooms/" + id
+
     });
   }
   // =======================================================
   //IN PROGRESS -->  DISPLAY ROOMS
   getRooms();
+
 
   // This function grabs rooms from the database and updates the view
   function getRooms() {
@@ -44,6 +53,7 @@ addZip();*/
   if (ZipCodeString) {
     ZipCodeString = "/ZipCode/" + ZipCodeString;
   }*/
+
 
     $.get("/api/rooms", function(data) {
       console.log("Rooms", data);
@@ -55,6 +65,7 @@ addZip();*/
       }
     });
   }
+
 
   function initializeRows() {
     searchTable.empty();
@@ -205,12 +216,15 @@ addZip();*/
       PriceSpan.text(room.Hotel.phone);
       PriceCell.append(PriceSpan);
 
+
     //========BOOK ROOM MODAL START==============
       //APPEND TO ROW
       var BookCell = $("<td>");
       newTableRow.append(BookCell);
         //APPEND TO CELL
+
         var ConfirmModalButton = $("<a id=bookRoom" + [i] + " " + "class='bookButton waves-effect waves-light btn modal-trigger indigo lighten-4' href='#modal1'></a>");
+
         ConfirmModalButton.text("Book");
         BookCell.append(ConfirmModalButton);
         //APPEND TO CELL
@@ -241,19 +255,23 @@ addZip();*/
                 var NoIcon = $("<i class='material-icons'>");
                 NoButton.append(NoIcon);*/
 
+
       newTableRow.data("room", room);
       return newTableRow;
     }
   }
+
 
   // This function displays a messgae when there are no rooms
   function displayEmpty() {
     searchTable.empty();
     var messageh2 = $("<h2>");
     messageh2.css({ "text-align": "center", "margin-top": "50px" });
+
     messageh2.html(
       "No rooms yet for this area, navigate <a href='/'>here</a> to exit."
     );
+
     searchTable.append(messageh2);
   }
 });

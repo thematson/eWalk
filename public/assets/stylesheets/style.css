@@ -17,28 +17,32 @@ main {
 
 #welcomeLogo2 {
   font-family: 'Oswald', sans-serif;
-  font-size: 20px;
+
+  font-size:20px;
   color: #283593;
-  margin: 0px;
+  margin:0px;  
   cursor: pointer;
 }
 
-.brick {
-  background-color: #c5cae9;
+.brick{
+  background-color:#c5cae9;
 }
 
-.brick2 {
-  background-color: #c5cae9;
+.brick2{
+  background-color:#c5cae9;
+
   padding: 10px 0;
 }
 
 #welcome {
-  margin: 0px !important;
+
+  margin:0px !important;
   padding: 10px 0px;
-  color: #283593;
+  color:#283593;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-size:16px;
+  font-weight:bold;
+
 }
 
 #postLogo {
@@ -50,7 +54,9 @@ main {
 }
 
 Label::after {
-  color: #c5cae9;
+
+  color:#c5cae9;
+
 }
 
 #searchLogo {
@@ -126,25 +132,31 @@ th {
   color: white;
 }
 
-.input-field input[type=text]:focus+label {
-  color: #c5cae9 !important;
+
+.input-field input[type=text]:focus + label  {
+  color:#c5cae9 !important;
+
   font-family: 'Montserrat', sans-serif;
 }
 
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #c5cae9 !important;
-  box-shadow: 0 1px 0 0 rgba(223, 105, 110, 0) !important;
+
+  box-shadow: 0 1px 0 0 rgba(223,105,110,0) !important;
   font-family: 'Montserrat', sans-serif;
 }
 
-.input-field input[type=password]:focus+label {
-  color: #c5cae9 !important;
+.input-field input[type=password]:focus + label  {
+  color:#c5cae9 !important;
+
   font-family: 'Montserrat', sans-serif;
 }
 
 .input-field input[type=password]:focus {
   border-bottom: 1px solid #c5cae9 !important;
-  box-shadow: 0 1px 0 0 rgba(223, 105, 110, 0) !important;
+
+  box-shadow: 0 1px 0 0 rgba(223,105,110,0) !important;
+
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -162,6 +174,11 @@ th {
   margin: 0px!important;
   padding: 70px 0px !important;
 }
+.headerRow2{
+
+  margin:0px!important;
+  padding:70px 0px !important;
+}
 
 .right {
   padding-left: 50px !important;
@@ -174,16 +191,18 @@ th {
   background-color: #283593 !important;
 }
 
-#login,
-#register {
+#login, #register  {
+
   margin: 70px 0px;
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
-  font-size: 25px;
-  width: 220px;
-  height: 75px;
-  color: #283593;
+
+  font-weight:bolder;
+  font-size:25px;
+  width:220px;
+  height:75px;
+  color:#283593;
+
 }
 
 #modalHeader {
@@ -194,41 +213,43 @@ th {
 }
 
 .modalPadding {
-  padding-bottom: 0px !important;
-  padding-top: 0px !important;
-  ;
+
+  padding-bottom:0px !important;
+  padding-top:0px !important;;
+
 }
 
 .modalPara {
-  margin-bottom: 0px !important;
+  margin-bottom:0px !important;
   font-family: 'Montserrat', sans-serif;
 }
 
-#submit-Register,
-#submit-Login {
-  padding: 5px;
+#submit-Register, #submit-Login {
+  padding:5px;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
-  font-size: 20px;
-  width: 220px;
-  height: 60px;
-  color: #283593;
+  font-weight:bolder;
+  font-size:20px;
+  width:220px;
+  height:60px;
+  color:#283593;
 }
 
 .footerText {
-  color: #283593;
+  color:#283593;
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-weight: bold;
+  font-size:12px;
+  font-weight:bold;
 }
+
 
 blockquote {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   margin: 40px 0px !important;
   padding-left: 1.5rem;
-  border-left: 5px solid #c5cae9;
-  /* Just change the color value and that's it*/
+
+  border-left: 5px solid #c5cae9; /* Just change the color value and that's it*/
+
 }
 
 @media only screen and (max-width: 1400px) {
@@ -286,6 +307,13 @@ blockquote {
   #postLogo {
     font-size: 100px;
   }
+
+
+  #searchLogo, #postLogo {
+    font-size: 100px;
+  }
+
+
 }
 
 @media only screen and (max-width: 700px) {
@@ -330,9 +358,12 @@ blockquote {
     padding: 40px 10.5px !important;
     width: 100%
   }
-  #searchLogo,
-  #postLogo {
+
+
+  #searchLogo, #postLogo {
     font-size: 80px;
     text-align: center;
   }
+
 }
+

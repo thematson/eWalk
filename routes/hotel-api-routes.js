@@ -1,5 +1,5 @@
 // *********************************************************************************
-// hotel.js - this file offers a set of routes for displaying and saving data to the db
+// this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
 
 // Dependencies
@@ -13,6 +13,7 @@ module.exports = function(app) {
   
 
   //log in
+
   app.post("/api/hotels/login/:userName", passport.authenticate("local"), function(req, res){
     console.log("hi");
     var parts = req.url.split("/");
@@ -21,11 +22,25 @@ module.exports = function(app) {
     console.log(lastSegment);
     res.send("/choice/" + lastSegment);
 
+
+  //log Out
+  app.get('/api/hotels/login',
+    function(req, res){
+      req.logout();
+      res.send('/');
   });
 
-  // Get all vacant hotels
-  app.get("/api/hotels", function(req, res) {
-    db.Hotel.findAll({}).then(function(dbHotel) {
+  // Get all vacant rooms in a zipcode
+  app.get("/api/hotels/:zipCode", function(req, res) {
+    db.Hotel.findAll({
+      where: {
+        zipCode: req.params.zipCode
+      },
+      include: [{
+        model: Room,
+        where: status===1
+      }]
+    }).then(function(dbHotel) {
       res.json(dbHotel);
     });
   });
@@ -33,9 +48,12 @@ module.exports = function(app) {
   // Register/Add a hotel
   app.post("/api/hotels/register", function(req, res) {
 
+
     console.log(req.body);
     db.Hotel.create(
       {
+
+
       hotel_name: req.body.hotel_name,
       property_id: req.body.property_id,
       userName: req.body.userName,

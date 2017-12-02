@@ -1,5 +1,6 @@
 <h1>eWalk.io</h1>
 <h4>Be a Jedi! When you've overbooked your hotel, find a room faster and more efficiently with eWalk!</h4>
+<h2>eWalk.io can be found on Heroku at https://fast-wildwood-25635.herokuapp.com/</h2>
 
 ![Screenshot](public/assets/images/ewok.jpeg)
 <p>Credit: This is a clipart image and can be found at: </p> http://weclipart.com/gimg/A425F14D40565938/il_340x270.558688970_2sb2.jpg
@@ -8,7 +9,7 @@
 <p>Node.js, jQuery, MySQL, Sequelize, Passport.js, Materialize</p>
 
 <h3>Node.js</h3>
-<p>Grok intuitive ship it human-centered design cortado latte disrupt iterate. Ship it venture capital piverate SpaceTeam driven long shadow actionable insight agile Steve Jobs. Engaging unicorn iterate affordances cortado responsive pitch deck engaging bootstrapping intuitive. Thought leader innovate paradigm ideate thinker-maker-doer affordances Steve Jobs bootstrapping integrate.</p>
+<p>We used the following npm packages: Express, Body-parser, mysql2, Passport, Passport-local, Sequelize</p>
 <hr>
 
 <h3>jQuery.js</h3>
