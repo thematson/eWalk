@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log("this on pistRooms " + this.URL);
+    
     var parts = this.URL.split("/");
     var lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
 
@@ -22,15 +22,14 @@ $(document).ready(function() {
 
 
             $("#submit-Room").click(function(e) {
-                console.log("Submit Room button was clicked!");
-                console.log("checkoutDateInput: " + checkoutDateInput.val());
+               
                 e.preventDefault();
 
                 var roomData = {
                     roomType: roomTypeInput.val(),
                     price: roomPriceInput.val().trim(),
                     aboutRoom: aboutRoomInput.val().trim(),
-                    status: roomStatusInput.val().trim(),
+                    status: 1,
                     closeDate: checkoutDateInput.val()
                 };
                 var isRoomData = true;

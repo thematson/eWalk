@@ -4,7 +4,9 @@ var db = require("../models");
 module.exports = function(app){
 //GET route for getting all of the rooms
 app.get("/api/rooms/", function(req, res) {
-  db.Room.findAll({})
+  db.Room.findAll({
+    include: [db.Hotel]
+  })
   .then(function(dbRoom) {
     res.json(dbRoom);
   });
@@ -53,8 +55,7 @@ function createRoom(){
     }
   }).then(dbHotel=>{
     thisId = dbHotel[0].id;
-    console.log(dbHotel[0].id);
-    console.log(thisId);
+   
     createRoom();
   }
    
@@ -78,6 +79,16 @@ function createRoom(){
   //     res.json(err);
   //   });
 });
+  // DELETE route for deleting rooms
+  app.delete("/api/rooms/:id", function(req, res) {
+    db.Room.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
 
 app.put("/api/rooms", function(req, res) {
   db.Room.update(
