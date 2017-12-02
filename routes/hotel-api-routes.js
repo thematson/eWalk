@@ -21,7 +21,7 @@ module.exports = function(app) {
 
     console.log(lastSegment);
     res.send("/choice/" + lastSegment);
-
+});
 
   //log Out
   app.get('/api/hotels/login',
@@ -101,4 +101,5 @@ module.exports = function(app) {
       res.json(dbHotel);
     });
   });
-});
+
+}
