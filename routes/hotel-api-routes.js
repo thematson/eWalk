@@ -10,7 +10,7 @@ var passport = require("../config/passport");
 // Routes
 // =============================================================
 module.exports = function(app) {
-  
+
 
   //log in
 
@@ -67,7 +67,7 @@ module.exports = function(app) {
       balance: req.body.balance,
       api_id: req.body.api_id
     }
-    
+
   ).then(function(){
      var logIn = req.body.userName;
       res.redirect(307, "/api/hotels/login/" + logIn);
@@ -101,4 +101,4 @@ module.exports = function(app) {
       res.json(dbHotel);
     });
   });
-};
+});
