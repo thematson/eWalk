@@ -1,281 +1,119 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-    <title> eWalk.io </title>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!--Import style.css-->
-    <link rel="stylesheet" type="text/css" href="/public/assets/stylesheets/style.css">
-    <!--Import Google F0nts-->
-    <link href="https://fonts.googleapis.com/css?family=Dosis:300|Montserrat:300|Oswald" rel="stylesheet">
+  <title> eWalk.io </title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!--Import style.css-->
+  <link rel="stylesheet" type="text/css" href="/public/assets/stylesheets/style.css">
+  <!--Import Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Dosis:300|Montserrat:300|Oswald" rel="stylesheet">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body class="grey lighten-5">
-<!-- ======================================================================== -->
-<!-- HEADER ///////////////////////////////////////////////////////////////// -->
-<!-- ======================================================================== -->
-<header class="indigo darken-3">
+  <!-- ======================================================================== -->
+  <!-- HEADER ///////////////////////////////////////////////////////////////// -->
+  <!-- ======================================================================== -->
+  <header class="indigo darken-3">
     <div class="row brick2 z-depth-4 waves-red">
-        <div class="container">
-            <p id="welcomeLogo2"> eWalk.io</p>
-        </div>
+      <div class="container">
+        <p id="welcomeLogo2"> eWalk.io</p>
+      </div>
 
-    </header>
+  </header>
 
-    <main class="indigo darken-3">
-        <div class="container">
-            <div class="row">
-                <div class="col m12 ">
-                    <h1 id=searchHeader>Search rooms</h1>
-                    <br>
+  <main class="indigo darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col m12 ">
+          <h1 id=searchHeader>Search rooms</h1>
+          <br>
 
+          <br>
 
-                    <!-- <div class="input-field col s3 noLeftPadding">
-                        <input placeholder="" id="zip_code" type="text" class="validate">
-                        <label class="noLeftPadding" for="zip_code">Zip Code</label>
-                        <button class="modal-action btn waves-effect waves-light indigo lighten-2 hoverable" type="submit" form="formId" id="zipSubmit" "action">View Rooms
-                            <i class="material-icons right">view_headline</i>
-                        </button><br><br><br>
-                    </div> //-->
-                    <br>
+          <div class="row">
+            <div class="col m12 searchContainer hoverable">
+              <table id=searchTable class="responsive-table highlight centered">
+                <thead>
+                  <tr>
+                    <th class=propertyData>Property
+                      <br> Name</th>
+                    <th class=propertyData>Room
+                      <br> Type</th>
+                    <th class=roomData>Room
+                      <br> Price</th>
+                    <th class=roomData>Room
+                      <br> Description</th>
+                    <th class=roomData>Hotel
+                      <br> Phone</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
 
-                    <div class="row">
-                        <div class="col m12 searchContainer hoverable">
-                            <table id=searchTable class="responsive-table highlight centered">
-                                <thead>
-                                    <tr>
-                                        <th class=propertyData>Property
-                                            <br> Name</th>
-                                        <th class=propertyData>Room
-                                            <br> Type</th>
-                                        <th class=roomData>Room
-                                            <br> Price</th>
-                                        <th class=roomData>Room
-                                            <br> Description</th>
-                                        <th class=roomData>Hotel
-                                            <br> Phone</th>
-                                    </tr>
-                                </thead>
-                                <tbody id=tableBody>
-
-                                    <!-- Modal Trigger -->
-                                    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
-                                    
-                                    <!-- Modal Structure -->
-                                    <div id="modal1" class="modal modal-fixed-footer">
-                                        <div class="modal-content">
-                                            <h4>Congratulations! Booking Cofirmation</h4>
-                                            <p>You have confirmed booking to this room. An email has been sent to the destination hotel and they await your guests arrival.
-                                                Please select an option below to either exit or book another room.
-                                            </p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="/" class="modal-action modal-close waves-effect waves-green btn-flat ">Exit</a>
-                                            <a href="/browseRooms" class="modal-action modal-close waves-effect waves-green btn-flat ">Book Again</a>
-                                        </div>
-                                    </div>
-
-
-                                    <!-- DELETE ===========================-->
-                                    <!-- Will be created in browseRooms.js -->
-                                    <!-- <tr>
-                                    <td><span id=propName></span>Renaissance Orlando at SeaWorld®</span></td>
-                                    <td>
-                                        <a id="viewProperty" class="waves-effect waves-light btn modal-trigger indigo lighten-2 " href="#details">View</a>
-                                        <div id="details" class="modal wordWrap">
-                                            <div class="modal-content property-details left-align">
-                                                <p class="details wordWrap"> Web Address : <a href='http://www.marriott.com/hotels/travel/mcosr-renaissance-orlando-at-seaworld/' style="cursor:pointer" target="_blank">Visit Property Site</a> </p>
-                                                <p class="details wordWrap"> Physical Address : <span id=address>6677 Sea Harbor Drive  Orlando, FL 32821 USA</span></p>
-                                                <p class="details wordWrap"> Physical Address : <span id=phone>+1-407-351-5555</span></p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><span id=type>Presidential Suite</span></td>
-
-                                    <td> 
-                                        <a id="roomModal" class="waves-effect waves-light btn modal-trigger indigo lighten-2" href="#room">View</a>
-
-                                    <td>
-                                        <a id="roomModal" class="waves-effect waves-light btn modal-trigger red lighten-2" href="#room">View</a>
-
-                                        <div id="room" class="modal wordWrap">
-                                            <div class="modal-content  room-details left-align">
-                                                <p class="details wordWrap"> Room Description : <br> <span id=descr class="wordWrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><span id=price>$500.87</span></td>
-                                    <td>
-                                        <a id="bookRoom" class="waves-effect waves-light btn modal-trigger indigo darken-3" href="#modalConfirm">Book</a>
-                                        <div id="modalConfirm" class="modal wordWrap">
-                                            <div class="modal-content confirmContent wordWrap">
-                                                <h4 class=wordWrap>Are you sure you would like to book this room?</h4>
-
-                                                <div class="modal-footer">
-
-                                                    <button class="modal-action btn waves-effect waves-light indigo lighten-2" type="submit" form="formId" id="yes" "action">Yes
-                                                        <i class="material-icons">check</i>
-                                                    </button>
-
-                                                    <button class="modal-action btn waves-effect waves-light indigo darken-3" type="submit" form="formId" id="no" "action">No
-                                                        <i class="material-icons">close</i>
-                                                    </button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                        <td><span id=propName></span>Renaissance Orlando at SeaWorld®</td></td>
-                                        <td>
-                                            <a id="vewProperty" class="waves-effect waves-light btn modal-trigger indigo lighten-2" href="#details">View</a>
-                                            <div id="details" class="modal wordWrap">
-                                                <div class="property-details left-align">
-                                                    <p class="details wordWrap"> Web Address : <a href='http://www.marriott.com/hotels/travel/mcosr-renaissance-orlando-at-seaworld/' style="cursor:pointer" target="_blank">Visit Property Site</a> </p>
-                                                    <p class="details wordWrap"> Physical Address : <span id=address>6677 Sea Harbor Drive  Orlando, FL 32821 USA</span></p>
-                                                    <p class="details wordWrap"> Physical Address : <span id=phone>+1-407-351-5555</span></p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span id=type>Presidential Suite</span></td>
-
-                                        <td> 
-                                            <a id="roomModal" class="waves-effect waves-light btn modal-trigger indigo lighten-2" href="#room">View</a>
-
-                                            <div id="room" class="modal wordWrap">
-                                                <div class="room-details left-align">
-                                                    <p class="roomDes wordWrap"> Room Description : <br> <span id=descr class="wordWrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td><span id=price>$500.87</span></td>
-                                        <td>
-                                            <a id="bookRoom" class="waves-effect waves-light btn modal-trigger indigo darken-3" href="#modalConfirm">Book</a>
-                                            <div id="modalConfirm" class="modal wordWrap">
-                                                <div class="modal-content confirmContent wordWrap">
-                                                    <h4 class=wordWrap>Are you sure you would like to book this room?</h4>
-
-                                                    <div class="modal-footer">
-
-    
-                                                        <button class="modal-action btn waves-effect waves-light indigo lighten-2" type="submit" form="formId" id="yes" "action">Yes
-                                                            <i class="material-icons">check</i>
-                                                        </button>
-    
-                                                        <button class="modal-action btn waves-effect waves-light indigo lighten-2" type="submit" form="formId" id="no" "action">No
-
-                                                            <i class="material-icons">close</i>
-                                                        </button>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                            <td><span id=propName></span>Renaissance Orlando at SeaWorld®</td></td>
-                                            <td>
-                                                <a id="vewProperty" class="waves-effect waves-light btn modal-trigger indigo lighten-2" href="#details">View</a>
-                                                <div id="details" class="modal wordWrap">
-                                                    <div class="property-details left-align">
-                                                        <p class="details wordWrap"> Web Address : <a href='http://www.marriott.com/hotels/travel/mcosr-renaissance-orlando-at-seaworld/' style="cursor:pointer" target="_blank">Visit Property Site</a> </p>
-                                                        <p class="details wordWrap"> Physical Address : <span id=address>6677 Sea Harbor Drive  Orlando, FL 32821 USA</span></p>
-                                                        <p class="details wordWrap"> Phone Number : <span id=phone>+1-407-351-5555</span></p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span id=type>Presidential Suite</span></td>
-
-                                            <td> 
-                                                <a id="roomModal" class="waves-effect waves-light btn modal-trigger indigo lighten-2" href="#room">View</a>
-
-                                                <div id="room" class="modal wordWrap">
-                                                    <div class="room-details left-align">
-                                                        <p class="roomDes wordWrap"> Room Description : <br> <span id=descr class="wordWrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td><span id=price>$500.87</span></td>
-                                            <td>
-                                                <a id="bookRoom" class="waves-effect waves-light btn modal-trigger indigo darken-3" href="#modalConfirm">Book</a>
-                                                <div id="modalConfirm" class="modal wordWrap">
-                                                    <div class="modal-content confirmContent wordWrap">
-                                                        <h4 class=wordWrap>Are you sure you would like to book this room?</h4>
-
-                                                        <div class="modal-footer">
-
-        
-                                                            <button class="modal-action btn waves-effect waves-light indigo lighten-2" type="submit" form="formId" id="yes" "action">Yes
-                                                                <i class="material-icons">check</i>
-                                                            </button>
-        
-                                                            <button class="modal-action btn waves-effect waves-light indigo lighten-2" type="submit" form="formId" id="no" "action">No
-
-                                                                <i class="material-icons">close</i>
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                          </tr>
-                                        //-->
-
-                                </tbody>
-                            </table>
-                        </div>
-
+                  <!-- Modal Structure -->
+                  <div id="modal1" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                      <h4>Congratulations! Booking Confirmation</h4>
+                      <p>You have confirmed booking to this room. An email has been sent to the destination hotel and they await your guests arrival. Please select an option below to either exit or book another room.
+                      </p>
                     </div>
-                </div>
+                    <div class="modal-footer">
+                      <a href="/" class="modal-action modal-close waves-effect waves-green btn-flat ">Exit</a>
+                      <a href="/browseRooms" class="modal-action modal-close waves-effect waves-green btn-flat ">Book Again</a>
+                    </div>
+                  </div>
+
+
+                </tbody>
+              </table>
             </div>
+
+          </div>
         </div>
+      </div>
     </div>
-    </main>
-    <!-- ======================================================================== -->
-    <!-- FOOTER ///////////////////////////////////////////////////////////////// -->
-    <!-- ======================================================================== -->
-    <footer class="page-footer indigo lighten-4">
-        <div class="footer-copyright">
-            <div class="container footerText">
+    </div>
+  </main>
+  <!-- ======================================================================== -->
+  <!-- FOOTER ///////////////////////////////////////////////////////////////// -->
+  <!-- ======================================================================== -->
+  <footer class="page-footer indigo lighten-4">
+    <div class="footer-copyright">
+      <div class="container footerText">
 
-                © 2017 Copyright | Heather Mathies | Eric Matson | Misael Rivera
+        © 2017 Copyright | Heather Mathies | Eric Matson | Misael Rivera
 
-            </div>
-        </div>
-    </footer>
-    <!-- ======================================================================== -->
-    <!-- SCRIPTS //////////////////////////////////////////////////////////////// -->
-    <!-- ======================================================================== -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            $('.modal').modal();
-            $('.modal-trigger').modal();
-            $("#welcomeLogo2").click(function () {
-                location.href = "/choice";
-            });
-            $('.tooltipped').tooltip({ delay: 50 });
-        });
-    </script>
-    <script type="text/javascript">
-        $("#details").click(function () {
-            location.href = "/choice";
-        });
-
-    </script>
+      </div>
+    </div>
+  </footer>
+  <!-- ======================================================================== -->
+  <!-- SCRIPTS //////////////////////////////////////////////////////////////// -->
+  <!-- ======================================================================== -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.modal').modal();
+      $('.modal-trigger').modal();
+      $("#welcomeLogo2").click(function() {
+        location.href = "/choice";
+      });
+      $('.tooltipped').tooltip({
+        delay: 50
+      });
+    });
+  </script>
 
 
-    <script src="/public/assets/javascript/browseRooms.js"></script>
+  <script src="/public/assets/javascript/browseRooms.js"></script>
 </body>
 
 </html>
