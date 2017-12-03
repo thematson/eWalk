@@ -1,17 +1,16 @@
+//~functions for choice.html where users choice to either search or post vacant hotel rooms
 $(document).ready(function() {
-     var parts = this.URL.split("/");
-     var lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
+  var parts = this.URL.split("/");
+  var lastSegment = parts.pop() || parts.pop(); // handle potential trailing slash
 
-     console.log(lastSegment);
-    
 
-    $("#searchLogo").click(function() {
-      location.href = "/browseRooms";
-    });
+  $("#searchLogo").click(function() {
+    location.href = "/browseRooms/";
+  });
 
-    $("#postLogo").click(function () {
-        location.href = "/postRooms/" + lastSegment;        
+  $("#postLogo").click(function() {
+    location.href = "/postRooms/" + lastSegment;
 
-    });
+  });
 
 });
