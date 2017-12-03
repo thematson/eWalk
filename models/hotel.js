@@ -1,5 +1,6 @@
-
-
+// *********************************************************************************
+// HOTEL.JS - THIS FILE DEFINES OUR HOTEL MODEL ( WE INTERCHANGEABLY CALL HOTEL=== PROPERTY)
+// *********************************************************************************
 module.exports = function(sequelize, DataTypes) {
   var Hotel = sequelize.define("Hotel", {
     hotel_name: {
@@ -70,12 +71,12 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+  //joining the hotel model with the room model so we can associate rooms with corresponding hotels
+  Hotel.prototype.validPassword = function(password) {
+    return password == this.password;
+  };
 
-    Hotel.prototype.validPassword = function(password) {
-      return password == this.password;
-    };
-
-  Hotel.associate = function(models){
+  Hotel.associate = function(models) {
     Hotel.hasMany(models.Room, {
       onDelete: "cascade"
     });
@@ -83,3 +84,6 @@ module.exports = function(sequelize, DataTypes) {
 
   return Hotel;
 };
+// *********************************************************************************
+//                                END OF FILE
+// *********************************************************************************

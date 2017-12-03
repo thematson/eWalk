@@ -1,3 +1,6 @@
+// *********************************************************************************
+// ROOM.JS - - THIS FILE DEFINES OUR ROOM MODEL 
+// *********************************************************************************
 module.exports = function(sequelize, DataTypes) {
   var Room = sequelize.define("Room", {
     price: {
@@ -27,7 +30,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Room.associate = function(models){
+  Room.associate = function(models) {
     Room.belongsTo(models.Hotel, {
       foreignKey: {
         allowNull: false
@@ -37,3 +40,6 @@ module.exports = function(sequelize, DataTypes) {
 
   return Room;
 };
+// *********************************************************************************
+//                                END OF FILE
+// *********************************************************************************
