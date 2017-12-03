@@ -33,7 +33,7 @@ $(function() {
     $.post("/api/hotels/login/" + logIn, hotelLogin).then(function(data) {
       window.location.replace(data);
     }).catch(function(err) {
-      console.log(err)
+      console.log(err);
     });
   };
   //logoutHotel does a post to "/api/hotels/logout" route and redirects to home page. `broken as of 11/30/17`
@@ -60,7 +60,7 @@ $(function() {
         userName: {
           required: "Incorrect credentials"
         },
-        password: "Incorrect credentials",
+        password: "Incorrect credentials"
       },
       //broken
       errorElement: 'div',
