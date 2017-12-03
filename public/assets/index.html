@@ -1,274 +1,280 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
 	<title> eWalk.io </title>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <!--Import style.css-->
-  <link rel = "stylesheet" type = "text/css" href = "/public/assets/stylesheets/style.css">
-  <!--Import Google Fsnts-->
-  <link href="https://fonts.googleapis.com/css?family=Dosis:300|Montserrat:300|Oswald" rel="stylesheet">
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<!--Import style.css-->
+	<link rel="stylesheet" type="text/css" href="/public/assets/stylesheets/style.css">
+	<!--Import Google Fsnts-->
+	<link href="https://fonts.googleapis.com/css?family=Dosis:300|Montserrat:300|Oswald" rel="stylesheet">
 
-  <meta charset="utf-8">
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body class="grey lighten-5">
-<!-- ======================================================================== -->
-<!-- HEADER ///////////////////////////////////////////////////////////////// -->
-<!-- ======================================================================== -->
-<header class="indigo darken-3">
-  <div class="row brick z-depth-4 waves-red">
-    <div class="container">
-        <p id="welcomeLogo2"> Welcome to eWalk.io</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row ">
-      <div class="col m6 headerRow ">
-        <h1 id="welcomeLogo">eWalk.io</h1><br>
-      </div>
+	<!-- ======================================================================== -->
+	<!-- HEADER ///////////////////////////////////////////////////////////////// -->
+	<!-- ======================================================================== -->
+	<header class="indigo darken-3">
+		<div class="row brick z-depth-4 waves-red">
+			<div class="container">
+				<p id="welcomeLogo2"> Welcome to eWalk.io</p>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row ">
+				<div class="col m6 headerRow ">
+					<h1 id="welcomeLogo">eWalk.io</h1><br>
+				</div>
 
-<!-- ======================================================================== -->
-<!-- LOGIN MODAL //////////////////////////////////////////////////////////// -->
-<!-- ======================================================================== -->
-    <div class="col m6 headerRow right">
-
-
-          <a id="login" class="waves-effect waves-light btn modal-trigger indigo lighten-2 btn-large" href="#modal1">Login</a>
-
-          <div id="modal1" class="modal">
-						<form class ="formValidate" id="formValidate">
-            <div class="modal-content modalPadding">
-              <h4 id=modalHeader>Enter the eWalk village</h4>
-              <p class=modalPara>Please enter your User Name and Password </p>
-        <!-- Property ID Form =============================================== -->
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="userName" name= "userName" type="text" class="validate">
-                  <label for="userName">User Name</label>
-                </div>
-              </div>
-        <!-- Property Password Form ========================================= -->
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="password" name= "password" type="password" class="validate">
-                  <label for="password">Password</label>
-                </div>
-              </div>
-            </div>
-        <!-- Login Submit ==================================================== -->
-            <div class="modal-footer">
-
-              <button class="modal-action btn waves-effect waves-light indigo lighten-2" type="submit" id="submit-Login" name="action">Submit
-
-                <i class="material-icons right">send</i>
-              </button>
-            </div>
-					</form>
-          </div>
+				<!-- ======================================================================== -->
+				<!-- LOGIN MODAL //////////////////////////////////////////////////////////// -->
+				<!-- ======================================================================== -->
+				<div class="col m6 headerRow right">
 
 
-<!-- ======================================================================== -->
-<!-- REGISTRATION MODAL ///////////////////////////////////////////////////// -->
-<!-- ======================================================================== -->
+					<a id="login" class="waves-effect waves-light btn modal-trigger indigo lighten-2 btn-large" href="#modal1">Login</a>
 
-
-          <a id="register" class="waves-effect waves-light btn modal-trigger indigo lighten-2 btn-large" onclick="play()" href="#modal2">Register</a>
-          <audio id="audio" src="public/assets/images/Lightsaber Turn On-SoundBible.com-1637663395.mp3"></audio>
-
-          <div id="modal2" class="modal">
-            <div class="modal-content">
-              <h4 id=modalHeader>Join the eWalk village</h4>
-              <p>Tell us about your property.</p>
-          <!-- Property Name Form ============================================= -->
-              <div class="row">
-                <div class="input-field col s12">
-                  <input placeholder="Jipjip's lodge" id="property_name" onFocus="geolocate()" type="text" >
-                  <label for="property_name">Property Name</label>
-                </div>
-              </div>
-          <!-- Property URL Form ============================================== -->
-              <div class="row">
-                <div class="input-field col s12">
-                  <input placeholder="www.JipJipsLodge.com" id="property_url" type="text" class="validate">
-                  <label for="property_url">URL</label>
-                </div>
-              </div>
-          <!-- Property Address Form ========================================== -->
-              <div class="row">
-                <div class="input-field col s12">
-                  <input placeholder="123 Tall Tree Lane, Orlando, FL" id="property_address" type="text" class="validate"></input>
-                  <label for="property_address">Address</label>
-                </div>
-              </div>
-          <!-- Property Zip Form ========================================== -->
-          <div class="row">
-            <div class="input-field col s12">
-              <input placeholder="32821" id="property_zip" type="text" class="validate"></input>
-              <label for="property_address">Zip Code</label>
-            </div>
-          </div>
-          <!-- Property Phone Number Form ===================================== -->
-              <div class="row">
-                <div class="input-field col s12">
-                  <input placeholder="555-555-1234" id="property_phone" type="text" class="validate">
-                  <label for="property_phone">Phone Number</label>
-                </div>
-              </div>
-          <!-- Property Description Form ====================================== -->
-              <div class="row">
-                <form class="col s12">
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <textarea id="textarea1" class="materialize-textarea"></textarea>
-                      <label for="aboutUs">Property Description</label>
-                    </div>
-                  </div>
-                </form>
-              </div>
-          <!-- Property Routing Number Form =================================== -->
-              <div class="row">
-                <div class="input-field col s12">
-                  <input placeholder="" id="property_routing" type="text" class="validate">
-                  <label for="property_routing">Routing Number</label>
-                </div>
-              </div>
-
-						<!-- Property userName Form =================================== -->
+					<div id="modal1" class="modal">
+						<form class="formValidate" id="formValidate">
+							<div class="modal-content modalPadding">
+								<h4 id=modalHeader>Enter the eWalk village</h4>
+								<p class=modalPara>Please enter your User Name and Password </p>
+								<!-- Property ID Form =============================================== -->
 								<div class="row">
 									<div class="input-field col s12">
-										<input placeholder="" id="registerUserName" type="text" class="validate">
-										<label for="registerUserName">Create a User Name</label>
+										<input id="userName" name="userName" type="text" class="validate">
+										<label for="userName">User Name</label>
 									</div>
 								</div>
-							<!-- Property password Form =================================== -->
-									<div class="row">
-										<div class="input-field col s12">
-											<input placeholder="" id="registerPassword" type="text" class="validate">
-											<label for="registerPassword">Create a password that is between 4 and 10 characters</label>
-										</div>
+								<!-- Property Password Form ========================================= -->
+								<div class="row">
+									<div class="input-field col s12 error">
+										<input id="password" name="password" type="password" class="validate">
+										<label for="password">Password</label>
 									</div>
 								</div>
-								<div style="display: none" id="alert" class="alert" role="alert">
-				          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-				          <span class="sr-only">Error:</span> <span class="msg"></span>
-			         </div>
-          <!-- Register Submit ================================================ -->
-            <div class="modal-footer">
+							</div>
+							<!-- Login Submit ==================================================== -->
+							<div class="modal-footer">
 
-              <button class="modal-action btn waves-effect waves-light indigo lighten-2" id="submit-Register" type="submit" form="formId" name="action">Submit
+								<button class="modal-action btn waves-effect waves-light indigo lighten-2" type="submit" id="submit-Login" name="action">Submit
 
                 <i class="material-icons right">send</i>
               </button>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-</header>
+							</div>
+						</form>
+					</div>
 
-<main>
-  <div class="container">
-  <div class="row">
-    <div class="col m12">
-      <blockquote>Have you overbooked your property? </blockquote>
-      <blockquote>Do you have a few rooms to fill for the night? </blockquote>
-      <blockquote>Join the <strong>eWalk</strong> village and simplify your night!</blockquote>
-    </div>
-  </div>
-</div>
-</main>
-<!-- ======================================================================== -->
-<!-- FOOTER ///////////////////////////////////////////////////////////////// -->
-<!-- ======================================================================== -->
-<footer class="page-footer indigo lighten-4">
-  <div class="footer-copyright">
-    <div class="container footerText">
-      © 2017 Copyright  |  Heather Mathies  |  Eric Matson  |  Misael Rivera
-    </div>
-  </div>
-</footer>
-<!-- ======================================================================== -->
-<!-- SCRIPTS //////////////////////////////////////////////////////////////// -->
-<!-- ======================================================================== -->
 
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-			<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-      <script type="text/javascript">$(document).ready(function(){$('.modal').modal();});</script>
-			<script src="/public/assets/javascript/register.js"></script>
-			<script src="/public/assets/javascript/login.js"></script>
-			<script src="/public/assets/javascript/main.js"></script>
-			<script>
-      var placeSearch, autocomplete;
-      function play() {
-          var audio = document.getElementById("audio");
-          audio.play();
-        }
+					<!-- ======================================================================== -->
+					<!-- REGISTRATION MODAL ///////////////////////////////////////////////////// -->
+					<!-- ======================================================================== -->
 
-        function initAutocomplete() {
-          console.log('function autocom clled');
-          // Create the autocomplete object, restricting the search to geographical
-          // location types.
-          autocomplete = new google.maps.places.Autocomplete(
-            (document.getElementById('property_name')),
-            { types: ['establishment'] });
 
-          // When the user selects an address from the dropdown, populate the address
-          // fields in the form.
-          autocomplete.addListener('place_changed', fillInAddress);
-        }
+					<a id="register" class="waves-effect waves-light btn modal-trigger indigo lighten-2 btn-large" onclick="play()" href="#modal2">Register</a>
+					<audio id="audio" src="public/assets/images/Lightsaber Turn On-SoundBible.com-1637663395.mp3"></audio>
 
-        function fillInAddress() {
-          var returnData = autocomplete.gm_bindings_.bounds[6].Kc.place;
-          // Get the place details from the autocomplete object.
-          var address = "";
-          var place = autocomplete.getPlace();
+					<div id="modal2" class="modal">
+						<div class="modal-content">
+							<h4 id=modalHeader>Join the eWalk village</h4>
+							<p>Tell us about your property.</p>
+							<!-- Property Name Form ============================================= -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="Jipjip's lodge" id="property_name" onFocus="geolocate()" type="text">
+									<label for="property_name">Property Name</label>
+								</div>
+							</div>
+							<!-- Property URL Form ============================================== -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="www.JipJipsLodge.com" id="property_url" type="text" class="validate">
+									<label for="property_url">URL</label>
+								</div>
+							</div>
+							<!-- Property Address Form ========================================== -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="123 Tall Tree Lane, Orlando, FL" id="property_address" type="text" class="validate"></input>
+									<label for="property_address">Address</label>
+								</div>
+							</div>
+							<!-- Property Zip Form ========================================== -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="32821" id="property_zip" type="text" class="validate"></input>
+									<label for="property_address">Zip Code</label>
+								</div>
+							</div>
+							<!-- Property Phone Number Form ===================================== -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="555-555-1234" id="property_phone" type="text" class="validate">
+									<label for="property_phone">Phone Number</label>
+								</div>
+							</div>
+							<!-- Property Description Form ====================================== -->
+							<div class="row">
+								<form class="col s12">
+									<div class="row">
+										<div class="input-field col s12">
+											<textarea id="textarea1" class="materialize-textarea"></textarea>
+											<label for="aboutUs">Property Description</label>
+										</div>
+									</div>
+								</form>
+							</div>
+							<!-- Property Routing Number Form =================================== -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="" id="property_routing" type="text" class="validate">
+									<label for="property_routing">Routing Number</label>
+								</div>
+							</div>
 
-          for (var i = 0; i < place.address_components.length; i++) {
-            if (i === 3 || i === 5 || i === 6){
-            } else{
-             address = address + place.address_components[i].short_name + " ";
-            }
-          }
-          console.log(place.address_components[0]);
-          console.log("address is " + address);
-          var zipCode = place.address_components[6].short_name;
+							<!-- Property userName Form =================================== -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="" id="registerUserName" type="text" class="validate">
+									<label for="registerUserName">Create a User Name</label>
+								</div>
+							</div>
+							<!-- Property password Form =================================== -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="" id="registerPassword" type="text" class="validate">
+									<label for="registerPassword">Create a password that is between 4 and 10 characters</label>
+								</div>
+							</div>
+						</div>
+						<div style="display: none" id="alert" class="alert" role="alert">
+							<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+							<span class="sr-only">Error:</span> <span class="msg"></span>
+						</div>
+						<!-- Register Submit ================================================ -->
+						<div class="modal-footer">
 
-          document.getElementById('property_url').value = place.website;
-          document.getElementById('property_address').value = address;
-          document.getElementById('property_zip').value = zipCode;
-          document.getElementById('property_phone').value = place.formatted_phone_number;
-          document.getElementById('property_routing').value = place.place_id;
-          
-        }
+							<button class="modal-action btn waves-effect waves-light indigo lighten-2" id="submit-Register" type="submit" form="formId" name="action">Submit
 
-        // Bias the autocomplete object to the user's geographical location,
-        // as supplied by the browser's 'navigator.geolocation' object.
-        function geolocate() {
+                <i class="material-icons right">send</i>
+              </button>
 
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-              var geolocation = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-              };
-              var circle = new google.maps.Circle({
-                center: geolocation,
-                radius: position.coords.accuracy
-              });
-              autocomplete.setBounds(circle.getBounds());
-            });
-          }
-        }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBi-gXaIAQK7Ls0a1qcSquIl2CQKdJJaks&libraries=places&callback=initAutocomplete"
-    async defer></script>
-    </body>
-  </html>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col m12">
+					<blockquote>Have you overbooked your property? </blockquote>
+					<blockquote>Do you have a few rooms to fill for the night? </blockquote>
+					<blockquote>Join the <strong>eWalk</strong> village and simplify your night!</blockquote>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- ======================================================================== -->
+	<!-- FOOTER ///////////////////////////////////////////////////////////////// -->
+	<!-- ======================================================================== -->
+	<footer class="page-footer indigo lighten-4">
+		<div class="footer-copyright">
+			<div class="container footerText">
+				© 2017 Copyright | Heather Mathies | Eric Matson | Misael Rivera
+			</div>
+		</div>
+	</footer>
+	<!-- ======================================================================== -->
+	<!-- SCRIPTS //////////////////////////////////////////////////////////////// -->
+	<!-- ======================================================================== -->
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.modal').modal();
+		});
+	</script>
+	<script src="/public/assets/javascript/register.js"></script>
+	<script src="/public/assets/javascript/login.js"></script>
+	<script src="/public/assets/javascript/main.js"></script>
+	<script>
+		var placeSearch, autocomplete;
+
+		function play() {
+			var audio = document.getElementById("audio");
+			audio.play();
+		}
+
+		function initAutocomplete() {
+			console.log('function autocom clled');
+			// Create the autocomplete object, restricting the search to geographical
+			// location types.
+			autocomplete = new google.maps.places.Autocomplete(
+				(document.getElementById('property_name')), {
+					types: ['establishment']
+				});
+
+			// When the user selects an address from the dropdown, populate the address
+			// fields in the form.
+			autocomplete.addListener('place_changed', fillInAddress);
+		}
+
+		function fillInAddress() {
+			var returnData = autocomplete.gm_bindings_.bounds[6].Kc.place;
+			// Get the place details from the autocomplete object.
+			var address = "";
+			var place = autocomplete.getPlace();
+
+			for (var i = 0; i < place.address_components.length; i++) {
+				if (i === 3 || i === 5 || i === 6) {} else {
+					address = address + place.address_components[i].short_name + " ";
+				}
+			}
+			console.log(place.address_components[0]);
+			console.log("address is " + address);
+			var zipCode = place.address_components[6].short_name;
+
+			document.getElementById('property_url').value = place.website;
+			document.getElementById('property_address').value = address;
+			document.getElementById('property_zip').value = zipCode;
+			document.getElementById('property_phone').value = place.formatted_phone_number;
+			document.getElementById('property_routing').value = place.place_id;
+
+		}
+
+		// Bias the autocomplete object to the user's geographical location,
+		// as supplied by the browser's 'navigator.geolocation' object.
+		function geolocate() {
+
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position) {
+					var geolocation = {
+						lat: position.coords.latitude,
+						lng: position.coords.longitude
+					};
+					var circle = new google.maps.Circle({
+						center: geolocation,
+						radius: position.coords.accuracy
+					});
+					autocomplete.setBounds(circle.getBounds());
+				});
+			}
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBi-gXaIAQK7Ls0a1qcSquIl2CQKdJJaks&libraries=places&callback=initAutocomplete" async defer></script>
+</body>
+
+</html>
