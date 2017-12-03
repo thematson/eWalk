@@ -8,9 +8,7 @@
 
 <h2>Technologies Used:</h2>
 <li>
-  <ul>Node.js-
-  <p>We used the following npm packages: Express, Body-parser, mysql2, Passport, Passport-local, Sequelize
-  To run this application on your local computer do: git clone, git init and then run 'nodemon server.js' in the command line.</p>
+  <ul>Node.js-<p>We used the following npm packages: Express, Body-parser, mysql2, Passport, Passport-local, Sequelize.  To run this application on your local computer do: git clone, git init and then run 'nodemon server.js' in the command line.</p>
   </ul>
   <ul>MySQL- database management system. </ul>
   <ul>Sequelize- a promise-based ORM for Node.js </ul>
@@ -20,13 +18,10 @@
 </li>
 
 <h2>User Interface</h2>
-<p>We wanted the user interface to be simple and easy to use.  When your hotel is overbooked or your looking to fill a vacant room, you need something fast and easy to use. </p>
+<p>We wanted the user interface to be simple and easy to use.  When your hotel is overbooked or you're looking to fill a vacant room, you need something fast and easy to use. We drew out a flow chart of our app using <em>Gliffy Diagrams</em>.</p>
+<center>[Screenshot](public/assets/images/flowchart.png)</center>
 
 
 <h2>eWalk.io can be found on Heroku at https://fast-wildwood-25635.herokuapp.com/</h2>
-<!--
-![Screenshot](public/assets/images/ewok.jpeg)
-<p>Credit: This is a clipart image and can be found at: </p> http://weclipart.com/gimg/A425F14D40565938/il_340x270.558688970_2sb2.jpg
-<hr> -->
 
 <footer>eWalk.io Team members: Heather Mathies| Eric Matson| Misael Rivera</footer>
