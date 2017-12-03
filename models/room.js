@@ -1,3 +1,4 @@
+/*----------------Room model  -----------------*/
 module.exports = function(sequelize, DataTypes) {
   var Room = sequelize.define("Room", {
     price: {
@@ -27,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Room.associate = function(models){
+  Room.associate = function(models) {
     Room.belongsTo(models.Hotel, {
       foreignKey: {
         allowNull: false
