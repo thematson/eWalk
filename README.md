@@ -1,10 +1,16 @@
 <h1>eWalk.io</h1>
-<h4>Be a Jedi! When you've overbooked your hotel, find a room faster and more efficiently with eWalk!</h4>
-<h2>eWalk.io can be found on Heroku at https://fast-wildwood-25635.herokuapp.com/</h2>
+<h2>Overview</h2>
+<li>
+  <ul>eWalk.io is an application built for the hotel industry. In the hustling and bustling city of Orlando, it is very common for hotels to become overbooked.  When this occurs, the current industry standard is to call around local hotels to find rooms for their clients.  This takes time and can leave customers frustrated and angry. </ul>
 
+  <ul>eWalk.io solution was to have an online application where hotel staff can search for vacant rooms with a click of a button.  This saves time because users simply need to log on and search for all available rooms at one time.  Then, they are able to book the room online. </ul>
+</li>
+
+<h2>eWalk.io can be found on Heroku at https://fast-wildwood-25635.herokuapp.com/</h2>
+<!--
 ![Screenshot](public/assets/images/ewok.jpeg)
 <p>Credit: This is a clipart image and can be found at: </p> http://weclipart.com/gimg/A425F14D40565938/il_340x270.558688970_2sb2.jpg
-<hr>
+<hr> -->
 <h2>Technologies Used:</h2>
 <p>Node.js, jQuery, MySQL, Sequelize, Passport.js, Materialize</p>
 
