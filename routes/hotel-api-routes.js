@@ -1,5 +1,5 @@
 // *********************************************************************************
-// this file offers a set of routes for displaying and saving hotel data to the db
+// HOTEL API ROUTES: ROUTES FOR DISPLAYING AND SAVING HOTEL DATA TO THE DB 
 // *********************************************************************************
 
 // Dependencies

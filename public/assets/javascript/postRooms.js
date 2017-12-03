@@ -1,4 +1,7 @@
-/*========functions for room checkout calendar and posting vacant rooms to db*/
+// *********************************************************************************
+// POSTROMS.JS - FUNCTIONS FOR ROOM CHECKOUT CALENDER AND POSTING A VACANT ROOM TO ROOMS/API/ROUTES
+// *********************************************************************************
+
 $(document).ready(function() {
 
   var parts = this.URL.split("/");
@@ -62,4 +65,6 @@ $(document).ready(function() {
   }
 
 });
-//~end of file
+// *********************************************************************************
+//                                END OF FILE
+// *********************************************************************************

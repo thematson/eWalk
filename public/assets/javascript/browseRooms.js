@@ -1,4 +1,6 @@
-//~functions for browseRooms.html where users can search and book hotel rooms
+// *********************************************************************************
+// BROWSEROOMS.JS - FUNCTIONS THAT ALLOW USERS TO SEARCH AND BOOK HOTEL(PROPERTY) ROOMS
+// *********************************************************************************
 $(document).ready(function() {
   // searchTable holds all of our rooms
   var searchTable = $("#tableBody");
@@ -32,7 +34,7 @@ $(document).ready(function() {
     }
     searchTable.append(roomsToAdd);
 
-    // This function constructs a room's HTML
+    //== FUNCTION FOR DYNAMICALLY CREATING THE TABLE, ROWS, AND BUTTONS ON THE BROWSEROOMS.HTML PAGE======
     function createNewRow(room) {
 
       //========TABLE START ==============================
@@ -57,7 +59,7 @@ $(document).ready(function() {
       RoomTypeSpan.text(room.roomType);
       RoomTypeCell.append(RoomTypeSpan);
 
-      //========ROOM TYPE =================================
+      //========ROOM PRICE =================================
       //APPEND TO ROW
       var RoomTypeCell = $("<td>");
       newTableRow.append(RoomTypeCell);
@@ -66,7 +68,7 @@ $(document).ready(function() {
       RoomTypeSpan.text(room.price);
       RoomTypeCell.append(RoomTypeSpan);
 
-      //========ROOM TYPE =================================
+      //========ABOUT ROOM =================================
       //APPEND TO ROW
       var PriceCell = $("<td>");
       newTableRow.append(PriceCell);
@@ -75,7 +77,7 @@ $(document).ready(function() {
       PriceSpan.text(room.aboutRoom);
       PriceCell.append(PriceSpan);
 
-      //========ROOM TYPE =================================
+      //========ROOM PRICE =================================
       //APPEND TO ROW
       var PriceCell = $("<td>");
       newTableRow.append(PriceCell);
@@ -112,9 +114,7 @@ $(document).ready(function() {
     });
   }
 
-
-
-  // This function displays a messgae when there are no rooms
+  // This function displays a messaGe when there are no rooms
   function displayEmpty() {
     searchTable.empty();
     var messageh2 = $("<h2>");
@@ -131,3 +131,6 @@ $(document).ready(function() {
     searchTable.append(messageh2);
   }
 });
+// *********************************************************************************
+//                                END OF FILE
+// *********************************************************************************

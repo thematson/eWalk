@@ -1,3 +1,6 @@
+// *********************************************************************************
+// LOGIN.JS - FUNCTIONS THAT ALLOW USERS TO SEARCH AND BOOK HOTEL(PROPERTY) ROOMS
+// *********************************************************************************
 //shorten document on ready code function
 $(function() {
 
@@ -12,7 +15,7 @@ $(function() {
       userName: userNameInput.val().trim(),
       password: passwordInput.val().trim()
     };
-    //need to include if userName or password isn't in the database
+    // if userName or password isn't in the database
     if (!hotelLogin.userName || !hotelLogin.password) {
       $("#password").append("")
       userNameInput.val("");
@@ -33,7 +36,7 @@ $(function() {
       console.log(err)
     });
   };
-  //logoutHotel does a post to "" route and redirects to home page.
+  //logoutHotel does a post to "/api/hotels/logout" route and redirects to home page. `broken as of 11/30/17`
   function logoutHotel(hotelLogin) {
     $.get("/api/hotel/login", hotelLogin).then(function() {
       window.location.replace("*");
@@ -72,3 +75,6 @@ $(function() {
     }
   });
 });
+// *********************************************************************************
+//                                END OF FILE
+// *********************************************************************************

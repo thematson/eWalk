@@ -1,4 +1,7 @@
-//~function to display hotels based on zipcode ~~not currently being used but reserved for future versions
+// *********************************************************************************
+// MAPVIEW.JS - FUNCTION TO DISPLAY HOTELS BASED ON ZIPCODE ` NOT CURRENTLY BEING USED`
+// *********************************************************************************
+
 $(document).ready(function() {
   var db = require("../models");
 
@@ -11,3 +14,6 @@ $(document).ready(function() {
     console.log(markerArray);
   });
 });
+// *********************************************************************************
+//                                END OF FILE
+// *********************************************************************************

@@ -1,4 +1,6 @@
-/*----------------Hotel model (we often refer to it as 'property') -----------------*/
+// *********************************************************************************
+// HOTEL.JS - THIS FILE DEFINES OUR HOTEL MODEL ( WE INTERCHANGEABLY CALL HOTEL=== PROPERTY)
+// *********************************************************************************
 module.exports = function(sequelize, DataTypes) {
   var Hotel = sequelize.define("Hotel", {
     hotel_name: {
@@ -82,4 +84,6 @@ module.exports = function(sequelize, DataTypes) {
 
   return Hotel;
 };
-//end of hotel model
+// *********************************************************************************
+//                                END OF FILE
+// *********************************************************************************

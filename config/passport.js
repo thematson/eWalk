@@ -1,3 +1,6 @@
+// *********************************************************************************
+// PASSPORT.JS - THIS FILE CONFIGURATES THE APPLICATION TO USE PASSPORT FOR LOGIN/LOGOUT
+// *********************************************************************************
 // Pull in required dependencies
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
@@ -40,3 +43,6 @@ passport.deserializeUser(function(obj, cb) {
 });
 
 module.exports = passport;
+// *********************************************************************************
+//                                END OF FILE
+// *********************************************************************************
