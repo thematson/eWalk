@@ -19,8 +19,9 @@
 
 <h2>User Interface</h2>
 <p>We wanted the user interface to be simple and easy to use.  When your hotel is overbooked or you're looking to fill a vacant room, you need something fast and easy to use. We drew out a flow chart of our app using <em>Gliffy Diagrams</em>.</p>
+<p>Click <a href='https://user-images.githubusercontent.com/29784328/33531440-31376272-d85b-11e7-8a0f-72a7e883b50e.png'>here </a>.
 ![flowchart](https://user-images.githubusercontent.com/29784328/33531440-31376272-d85b-11e7-8a0f-72a7e883b50e.png)
-
+[eWalk.png.pdf](https://github.com/hmathies/eWalk/files/1525296/eWalk.png.pdf)
 
 <h2>eWalk.io can be found on Heroku at https://fast-wildwood-25635.herokuapp.com/</h2>
 <!--
