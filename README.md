@@ -18,11 +18,11 @@
 </li>
 
 <h2>User Interface</h2>
-<p>We wanted the user interface to be simple and easy to use.  When your hotel is overbooked or you're looking to fill a vacant room, you need something fast and easy to use. We drew out a flow chart of our app using <em>Gliffy Diagrams</em>.</p>
-<p>Click <a href='https://user-images.githubusercontent.com/29784328/33531440-31376272-d85b-11e7-8a0f-72a7e883b50e.png'>here </a>.
+<p> We drew out a flow chart of our app using <em>Gliffy Diagrams</em>.</p>
+<!-- <p>Click <a href='https://user-images.githubusercontent.com/29784328/33531440-31376272-d85b-11e7-8a0f-72a7e883b50e.png'>here </a>. -->
 
 ![flowchart](https://user-images.githubusercontent.com/29784328/33531440-31376272-d85b-11e7-8a0f-72a7e883b50e.png)
-
+<p>We wanted the user interface to be simple and easy to use.  When your hotel is overbooked or you're looking to fill a vacant room, you need something fast and easy to use.</p>
 ![Home Page](https://user-images.githubusercontent.com/29784328/33531700-ca50a3c6-d85e-11e7-8d10-686654fd234a.png)
 
 <h2>Future Development</h2>
