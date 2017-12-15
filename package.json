@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hmathies/eWalk.git"
+    "url": "git+https://github.com/thematson/eWalk.git"
   },
-  "author": "Heather Mathies, Eric Matson, Misael Rivera",
+  "author": "Eric Matson, Heather Mathies, Misael Rivera",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hmathies/eWalk/issues"
+    "url": "https://github.com/thematson/eWalk/issues"
   },
-  "homepage": "https://github.com/hmathies/eWalk#readme",
+  "homepage": "https://github.com/thematson/eWalk#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
